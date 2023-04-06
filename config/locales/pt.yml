@@ -14,20 +14,12 @@ pt:
   appendix: Apêndice
   appendix_teaser: Você quer saber mais? <a href="%{link}"> Consulte o apêndice deste capítulo </a>
   approved_by: Validado pelo %{validator} em %{date}
-  approved_message: Validado pelo mentor
-  approved_messages:
-    one: validado
-    other: validados
   are_you_sure: 'Tem certeza de que deseja %{action}?'
   ask_a_question: Faça uma pergunta!
   ask_community: Pergunte à comunidade
   ask_redirect: Você quer que nós o levemos para lá?
   ask_the_first_question: Faça a primeira pergunta!
   asked_time_since: "consultou há %{time}"
-  attempts_left:
-    zero: 'Você ficou sem tentativas'
-    one: '1 tentativa restante'
-    other: '%{count} tentativas restantes'
   author: Autor
   authoring: Autores
   authoring_note_html: 'Este guia foi desenvolvido por %{authors} nos termos do <a href = "https://creativecommons.org/licenses/by-sa/4.0/" target="_blank"> Creative Commons License Share-Equal, 4.0 </a>.'
@@ -36,7 +28,6 @@ pt:
   back_to_mumuki: Voltei para Mumuki!
   bibliotheca_ui: Biblioteca
   birthdate: Fecha de nacimiento
-  blocked_forum_explanation: Você está no meio de um exame agora?
   cancel: Cancelar
   chapter: Capítulo
   chapters: Capítulos
@@ -78,7 +69,6 @@ pt:
   delete_account_modal_lost_permissions: 'Ao deletar sua conta você perderá acesso aos seguintes cursos:'
   delete_account_mumuki: Exclua sua conta Mumuki
   deleted_by: Removido pelo %{deleter}
-  deleted_message_warning: Se você violar repetidamente essas ou outras regras da Área de Consulta, seu acesso a ela pode ser proibido ou você pode sofrer consequências mais graves, como a expulsão do curso.
   deleted_user: Conta excluída
   deletion_motive:
     inappropriate_content:
@@ -93,14 +83,12 @@ pt:
   day: Dia
   days: Dias
   description: Descrição
-  destroy_message: excluir a mensagem
   destroy: Excluir
   details: Detalhes
   disabled_explanation: Você está tentando acessar um recurso que foi desativado ou removido permanentemente
   disabled_organization_explanation: Este curso terminou
   download: Faça o download do que você fez
   edit: Editar
-  edit_message: Editar mensagem
   editor_placeholder: ... Escreva sua solução aqui ...
   email: E-mail
   email_sent: Email enviado
@@ -117,19 +105,6 @@ pt:
   error_500: erro 500
   error_description: Isto é o que é conhecido como <span class = "error-link"> %{error} </ span>.
   errored: Opa! Sua solução não pode ser executada
-  exam_authorization_pending_explanation_html: Você tem tempo até <strong>%{date}</strong> (horário de %{location}) para se inscrever. Após essa data, sua inscrição será avaliada e você receberá uma confirmação. <br> Não se esqueça de verificar as notificações!
-  exam_authorization_request_approved_html: Sua solicitação foi aprovada, não se esqueça de conectar em <strong>%{date}</strong> (horário de %{location}). Boa sorte!
-  exam_authorization_request_created: Você se inscreveu para o exame do dia %{friendly_date}
-  exam_authorization_request_rejected: Sua solicitação foi rejeitada porque você não atendeu aos requisitos.
-  exam_authorization_request_saved: Você alterou seu registro de exame para o dia %{friendly_date}
-  exam_authorization_request_updated: Há notícias sobre seu registro para %{description}
-  exam_registration_choose_exam: Selecione o dia e a hora em que gostaria de fazer o exame
-  exam_registration_explanation_html: Você tem tempo até <strong>%{date}</strong> (horário de %{location}) para se inscrever. Após essa data, sua inscrição será avaliada e você receberá uma confirmação. <br> Não se esqueça de verificar as notificações!
-  exam_registration_finished_html: A inscrição para este exame terminou na <strong>%{date}</strong> (horário de %{location})
-  exam_registration_open: "¡Inscrições abertas para %{description}!"
-  exam_registration_to: Inscrição a %{description}
-  exams_will_be_here: Seus Examesca nesta organização aparecerão aqui
-  exams: Examesca
   exercise: Exercício
   exercise_count: exercícios
   exercise_number: Exercício %{number}
@@ -155,7 +130,6 @@ pt:
   forum_terms_link: Se você tiver alguma dúvida, consulte as %{terms_link}
   fullscreen: Tela cheia (F11)
   gender: Gênero
-  get_messages: Ver mensagens
   go_to: Vá para %{organization}
   gone_explanation: Parece que você não pode mais acessar esse conteúdo.
   guide: Lição
@@ -180,7 +154,6 @@ pt:
   kids_default_success: Você fez muito bem!
   language: Linguagem
   languages: Linguagens
-  last_message: Última mensagem
   last_name: Sobrenome
   last_submission_date: Última solução
   latest_exercises: Últimos exercícios
@@ -198,35 +171,17 @@ pt:
     title:
       custom: Você tem uma nova notificação!
       delete_account: Confirme a exclusão da conta
-      exam_authorization_request_updated: Você tem alterações no registro do seu exame
-      exam_authorization_request_rejected: Inscrição rejeitada
-      exam_registration: Abertura de inscrições
     subtitle:
       delete_account: Você solicitou a exclusão de sua conta Mumuki
-      exam_authorization_request_approved: Seu pedido de inscrição para o exame foi aprovado.
-      exam_authorization_request_rejected: Sua inscrição para o exame foi rejeitada porque os requisitos não foram atendidos.
-      exam_registration: Agora você pode se inscrever para o exame!
     text:
       delete_account: Assim que sua conta for excluída, seu progresso e todos os seus dados pessoais também serão excluídos e você não poderá acessar esta conta novamente ou solicitar a restauração futura das informações. <br><br> Esta ação é irreversível e permanente. <br><br> Você entende as consequências e ainda deseja excluir sua conta?
-      exam_authorization_request_approved: Você poderá fazer o exame em %{exam_start_date} ao entrar na plataforma. Êxitos!
-      exam_authorization_request_rejected: Não te desanimes! Você fez um grande esforço e esperamos que continue aprendendo programação.
-      exam_registration: Você tem tempo para se registrar até o exam_registration_deadline. Para que seu registro seja aceito, você deve atender aos requisitos.
     button:
       custom: Minhas notificações
       delete_account: Deletar conta
-      exam_registration: Assinar o exame
-      exam_authorization_request_approved: Vá para a plataforma
-      exam_authorization_request_rejected: Meus exames
   male: Masculino
   manage_notification_subscriptions: Gerenciar suas notificações
   manage_notifications: Gerenciar notificações
   manual_evaluation_pending: Obrigado por enviar sua solução! Seus professores irão corrigi-lo em breve
-  message: Mensagem
-  message_deleted: Esta mensagem foi excluída porque %{motive}, o que viola as %{forum_terms}.
-  messages: Mensagens
-  messages_pluralized:
-    one: Mensagem
-    other: Mensagens
   minute: minuto
   minutes: minutos
   moderation: Mentoria
@@ -250,14 +205,10 @@ pt:
   need_help: Não entendo, preciso de ajuda!
   never: nunca
   new: Novo
-  new_message: Você tem dúvidas? Levante a mão!
-  new_message_placeholder: Escreva sua mensagem para o seu professor aqui ...
-  new_message_received: Você tem uma nova mensagem de %{sender}
   next_exercise: Em seguida
   next_guide: Próxima Lição %{nome}
   no_exercises: Não encontramos exercícios que correspondam à sua pesquisa.
   no_guides: Não encontramos lições que correspondam à sua pesquisa.
-  no_messages: Parece que você ainda não tem uma mensagem!
   no_need_hint: Este exercício não tem dica
   no_questions: Parece que ainda não há dúvida.
   no_submissions: Parece que você ainda não tentou resolver este exercício!
@@ -267,8 +218,6 @@ pt:
   not_in_any_organizations: Parece que você ainda não está em nenhuma organização!
   notification_subject:
     custom: Anúncios gerais
-    exam_authorization_request_updated: Mudanças no registro do exame
-    exam_registration: Inscrição para exames qualificados
   notifications: Notificações
   notifications_will_be_here: Suas notificações aparecerão aqui
   notify_problem_with_exercise: Relatar um erro
@@ -280,14 +229,11 @@ pt:
   organizations: Organizações
   organization_read_only_legend: 'Você está no modo de leitura. Você só poderá acessar os exercícios que fez anteriormente e não poderá enviar novas soluções'
   other: Outro
-  out_of_attempts: Você ficou sem tentativas. Você deve prosseguir para o próximo exercício!
   output: Sair
   overview: Visão global
   passed: Muito bem! Sua solução passou todos os testes
   passed_with_warnings: Sua solução funcionou, mas há coisas para melhorar
   pending: pendente
-  pending_messages: Você tem mensagens não lidas
-  pending_messages_explanation: Seu professor deixou uma mensagem para você! Verifique antes de continuar a enviar soluções.
   pending_review: Sendo revisto
   pending_review_count: '%{count} sendo revisto'
   permissions: Permissões
@@ -300,7 +246,6 @@ pt:
   processing_your_solution: Estamos processando sua solução
   programming_since: Sou programador
   progress: Progresso
-  read_messages: Ver mensagens
   refresh_or_wait: Se não mostrar automaticamente em alguns segundos, pressione F5
   reply_count:
     one: 1 resposta
@@ -318,7 +263,6 @@ pt:
   send: Enviar
   sending_solution: Solução de envio
   show: Mostrar
-  show_message: Mostrar mensagem
   sign_in: Iniciar sessão
   sign_in_action: iniciar sessão
   sign_out: Fechar Sessão

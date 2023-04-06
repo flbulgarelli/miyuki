@@ -56,10 +56,6 @@ module DynamicErrorsController
     render_error 'gone', 410, locals: { error_code: :gone, explanation: :gone_explanation }
   end
 
-  def gone_exam
-    render_error 'gone_exam', 410, locals: { error_code: :gone, explanation: :gone_exam_explanation }
-  end
-
   def unprepared_organization
     render_error 'forbidden', 403, locals: { error_code: :unprepared_organization, explanation: :unprepared_organization_explanation }
   end

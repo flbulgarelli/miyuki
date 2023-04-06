@@ -15,20 +15,12 @@ es:
   appendix: Apéndice
   appendix_teaser: ¿Querés saber más? <a href="%{link}">Consultá el apéndice de este capítulo</a>
   approved_by: Validado por %{validator} el %{date}
-  approved_message: Validado por mentorías
-  approved_messages:
-    one: validado
-    other: validados
   are_you_sure: '¿Confirmás que querés %{action}?'
   ask_a_question: ¡Hacé una pregunta!
   ask_community: Preguntá a la comunidad
   ask_redirect: ¿Querés que te llevemos ahí?
   ask_the_first_question: ¡Hacé la primera pregunta!
   asked_time_since: "consultó hace %{time}"
-  attempts_left:
-    zero: 'Te quedaste sin intentos'
-    one: '1 intento restante'
-    other: '%{count} intentos restantes'
   author: Autor
   authoring: Autores
   authoring_note_html: Esta guía fue desarrollada por %{authors} bajo los términos de la <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Licencia Creative Commons Compartir-Igual, 4.0</a>.
@@ -37,7 +29,6 @@ es:
   back_to_mumuki: ¡Volvé a Mumuki!
   bibliotheca_ui: Biblioteca
   birthdate: Fecha de nacimiento
-  blocked_forum_explanation: ¿Puede que estés en medio de un examen?
   cancel: Cancelar
   cancel_subscription: Cancelá tu subscripción.
   chapter: Capítulo
@@ -82,7 +73,6 @@ es:
   delete_account_modal_lost_permissions: 'Al eliminar tu cuenta perderás el acceso a los siguientes cursos:'
   delete_account_mumuki: Eliminar tu cuenta de Mumuki
   deleted_by: Eliminado por %{deleter}
-  deleted_message_warning: Si infringís reiteradamente estas u otras reglas del Espacio de Consultas, se te puede prohibir el acceso al mismo o podrás sufrir consecuencias más severas, como la expulsión del curso.
   deleted_user: Cuenta Eliminada
   deletion_motive:
     inappropriate_content:
@@ -98,7 +88,6 @@ es:
   days: Días
   delete_account: Eliminar Cuenta
   description: Descripción
-  destroy_message: eliminar el mensaje
   destroy: Eliminar
   details: Detalles
   disabled_explanation: Estás intentando acceder a un recurso que fue deshabilitado o eliminado de forma permamente
@@ -106,7 +95,6 @@ es:
   dont_leave_us: ¡No nos abandones! Aprender a programar es divertido. Sólo tenés que seguir practicando.
   download: "Descargá lo que hiciste"
   edit: Editar
-  edit_message: Editar mensaje
   editor_placeholder: "...escribí tu solución acá..."
   email: Email
   email_sent: Email enviado
@@ -123,21 +111,6 @@ es:
       internal_server_error: ¡Ups! Algo no anduvo bien
       not_found: ¡Ups!  La página no existe
   errored: ¡Ups! Tu solución no se puede ejecutar
-  exam_authorization_pending_confirmation_soon_html: El período de inscripción a este examen ha finalizado. Tu solicitud será evaluada pronto y recibirás una confirmación. <br> ¡No te olvides de revisar las notificaciones!
-  exam_authorization_pending_change_date_html: Tenés tiempo hasta el <strong>%{end_time}</strong> (hora de %{location}) para cambiar el turno haciendo click <strong><a href="%{edit_path}">acá</a></strong>. Pasada esa fecha, tu solicitud será evaluada y recibirás una confirmación. <br> ¡No te olvides de revisar las notificaciones!
-  exam_authorization_pending_done_html: Ya te inscribiste a este examen. Luego del <strong>%{end_time}</strong> (hora de %{location}) se evaluará tu solicitud y recibirás una confirmación. <br> ¡No te olvides de revisar las notificaciones!
-  exam_authorization_request_approved_html: Tu solicitud fue aprobada, no olvides conectarte el <strong>%{date}</strong> (hora de %{location}). ¡Buena suerte!
-  exam_authorization_request_created: Te inscribiste al examen del día %{friendly_date}
-  exam_authorization_request_rejected: Tu solicitud fue rechazada porque no cumpliste con los requisitos para rendir el examen.
-  exam_authorization_request_saved: Cambiaste tu inscripción al examen al día %{friendly_date}
-  exam_authorization_request_updated: Hay novedades sobre tu inscripción a %{description}
-  exam_registration_choose_exam: Seleccioná día y horario en el que te gustaría rendir el examen
-  exam_registration_explanation_html: Tenés tiempo hasta el <strong>%{date}</strong> (hora de %{location}) para inscribirte. Pasada esa fecha, tu solicitud será evaluada y recibirás una confirmación. <br> ¡No te olvides de revisar las notificaciones!
-  exam_registration_finished_html: La inscripción a este examen finalizó el <strong>%{date}</strong> (hora de %{location})
-  exam_registration_open: ¡Ya podés inscribirte a %{description}!
-  exam_registration_to: Inscripción a %{description}
-  exams_will_be_here: Tus exámenes en esta organización aparecerán acá
-  exams: Exámenes
   exercise: Ejercicio
   exercise_count: ejercicios
   exercise_number: Ejercicio %{number}
@@ -163,7 +136,6 @@ es:
   forum_terms_link: No olvides que al participar debés cumplir las %{terms_link}
   fullscreen: "Pantalla completa (F11)"
   gender: Género
-  get_messages: "Ver mensajes"
   go_to: 'Ir a %{organization}'
   gone_explanation: Este contenido ya no está disponible.
   guide: Lección
@@ -190,7 +162,6 @@ es:
   kids_default_success: ¡Lo hiciste muy bien!
   language: Lenguaje
   languages: Lenguajes
-  last_message: Último mensaje
   last_name: Apellido
   last_submission_date: Última solución
   latest_exercises: Últimos ejercicios
@@ -208,35 +179,17 @@ es:
     title:
       custom: ¡Tenés una nueva notificación!
       delete_account: Confirmar eliminación de cuenta
-      exam_authorization_request_updated: Tenés cambios en tu inscripción al examen
-      exam_authorization_request_rejected: Inscripción rechazada
-      exam_registration: Apertura de inscripciones
     subtitle:
       delete_account: Solicitaste eliminar tu cuenta de Mumuki
-      exam_authorization_request_approved: Tu solicitud de inscripción al examen fue aprobada.
-      exam_authorization_request_rejected: Tu solicitud de inscripción al examen fue rechazada ya que no se cumplieron los requisitos.
-      exam_registration: ¡Ya podés inscribirte al examen!
     text:
       delete_account: Una vez que se elimine tu cuenta se eliminarán también tu progreso y todos tus datos personales y no podrás volver a acceder a esta cuenta ni pedir la restitución futura de la información. <br><br> Esta acción es irreversible y permanente. <br><br> ¿Entendés las consecuencias y aún así querés eliminar tu cuenta?
-      exam_authorization_request_approved: Podrás rendir el examen el día %{exam_start_date} ingresando a la plataforma. ¡Éxitos!
-      exam_authorization_request_rejected: ¡No te desanimes! Hiciste un gran esfuerzo y esperamos que continúes aprendiendo programación.
-      exam_registration: Tenés tiempo de inscribirte hasta el %{exam_registration_deadline}. Para que tu inscripción sea aceptada debés cumplir con los requisitos.
     button:
       custom: Mis notificaciones
       delete_account: Eliminar cuenta
-      exam_registration: Inscribirme al Examen
-      exam_authorization_request_approved: Ir a la plataforma
-      exam_authorization_request_rejected: Mis exámenes
   male: Hombre
   manage_notification_subscriptions: Administrá tus notificaciones
   manage_notifications: Administrar notificaciones
   manual_evaluation_pending: ¡Gracias por enviar tu solución! Tus docentes la corregirán pronto
-  message: Mensaje
-  message_deleted: Este mensaje fue eliminado porque %{motive}, lo cual infringe las %{forum_terms}.
-  messages: Mensajes
-  messages_pluralized:
-    one: Mensaje
-    other: Mensajes
   minute: minuto
   minutes: minutos
   moderation: Mentoría
@@ -260,14 +213,10 @@ es:
   need_help: No entiendo, ¡necesito ayuda!
   never: nunca
   new: Nuevo
-  new_message: ¿Tenés dudas? ¡Levantá la mano!
-  new_message_placeholder: Escribí el mensaje para tu docente acá...
-  new_message_received: Tenés un nuevo mensaje de %{sender}
   next_exercise: Siguiente
   next_guide: 'Siguiente Lección: %{name}'
   no_exercises: No encontramos ejercicios que coincidan con tu búsqueda.
   no_guides: No encontramos lecciones que coincidan con tu búsqueda.
-  no_messages: ¡Parece que no tenés ningun mensaje todavía!
   no_need_hint: Este ejercicio no tiene pista
   no_questions: Parece que aún no hay ninguna consulta.
   no_submissions: ¡Parece que aún no intentaste resolver este ejercicio aún!
@@ -277,8 +226,6 @@ es:
   not_in_any_organizations: ¡Parece que no estás en ninguna organización todavía!
   notification_subject:
     custom: Anuncios generales
-    exam_authorization_request_updated: Cambios sobre inscripciones a exámenes
-    exam_registration: Inscripciones a exámenes habilitadas
   notifications: Notificaciones
   notifications_will_be_here: Tus notificaciones aparecerán aquí
   notify_problem_with_exercise: Reportá un bug
@@ -292,7 +239,6 @@ es:
   organizations: Organizaciones
   organization_read_only_legend: 'Estás en Modo Lectura: como el curso ya finalizó no podrás enviar soluciones'
   other: Otro
-  out_of_attempts: Te quedaste sin intentos. ¡Seguí al proximo ejercicio!
   output: Salida
   overview: Vista general
   passed: ¡Muy bien! Tu solución pasó todas las pruebas
@@ -300,8 +246,6 @@ es:
   pending: pendiente
   pending_review: En revisión
   pending_review_count: '%{count} en revisión'
-  pending_messages: Tenés mensajes sin leer
-  pending_messages_explanation: "¡Tu docente te dejó un mensaje! Revisalo antes de seguir enviando soluciones."
   permissions: Permisos
   please_validate: 'Estás a punto de ingresar al curso. Para poder ofrecerte una mejor experiencia, por favor validá que tus datos a continuación sean reales y correctos.'
   preferences_updated_successfully: Tus preferencias se actualizaron correctamente
@@ -312,7 +256,6 @@ es:
   processing_your_solution: Estamos procesando tu solución
   programming_since: Programando desde
   progress: Progreso
-  read_messages: Ver mensajes
   refresh_or_wait: Si no se muestra automáticamente en unos segundos, presioná F5
   reply_count:
     one: 1 respuesta
@@ -332,7 +275,6 @@ es:
   send: Enviar
   sending_solution: Enviando solución
   show: Mostrar
-  show_message: Mostrar mensaje
   sign_in: Iniciá sesión
   sign_in_action: iniciar sesión
   sign_out: Cerrar Sesión

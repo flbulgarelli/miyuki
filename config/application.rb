@@ -60,5 +60,6 @@ module Minimuki
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.sass.preferred_syntax = :sass
+    config.active_record.yaml_column_permitted_classes = [ActiveSupport::HashWithIndifferentAccess, Symbol]
   end
 end

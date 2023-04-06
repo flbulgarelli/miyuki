@@ -14,19 +14,12 @@ en:
   appendix: Appendix
   appendix_teaser: Do you want to learn more? <a href="%{link}">Check this chapter's appendix</a>"
   approved_by: Validated by %{validator} at %{date}
-  approved_message: Validated by mentor
-  approved_messages:
-    other: validated
   are_you_sure: Are you sure you want to %{action}?
   ask_a_question: Ask a question!
   ask_community: Ask community for help
   ask_redirect: Do you want to go there?
   ask_the_first_question: Be the first one to ask!
   asked_time_since: asked %{time} ago
-  attempts_left:
-    zero: "You've run out of attempts"
-    one: "1 attempt remaining"
-    other: '%{count} attempts remaining'
   author: Author
   authoring: Authoring
   authoring_note_html: This guide's content was developed by %{authors} under the terms of <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons License Share-Alike, 4.0</a>
@@ -35,7 +28,6 @@ en:
   back_to_mumuki: Back to Mumuki!
   bibliotheca_ui: Bibliotheca
   birthdate: Birthdate
-  blocked_forum_explanation: Are you in the middle of an exam right now?
   cancel: Cancel
   cancel_subscription: Cancel your subscription.
   chapter: Chapter
@@ -77,7 +69,6 @@ en:
   delete_account_modal_lost_permissions: 'By deleting your account, you will lose access to the following courses:'
   delete_account_mumuki: Delete your Mumuki account
   deleted_by: Deleted by %{deleter}
-  deleted_message_warning: If you repeateadly violate these or other rules, you may be prohibited from accessing the forum or you may suffer more severe consequences, such as being expulsed from the course.
   deleted_user: Deleted User
   deletion_motive:
     inappropriate_content:
@@ -91,13 +82,11 @@ en:
       past: Disclosed personal information
   description: Description
   destroy: Destroy
-  destroy_message: delete the message
   disabled_explanation: You are trying to visit a permamently disabled or deleted resource
   disabled_organization_explanation: This path has already finished.
   dont_leave_us: Don't leave us! Learning is fun. You just have to keep at it.
   download: Download your solution
   edit: Edit
-  edit_message: Edit message
   editor_placeholder: "write your solution here..."
   email: Email
   email_sent: Email sent
@@ -114,19 +103,6 @@ en:
   error_500: 500 error
   error_description: This is known as a <span class="error-link">%{error}</span>.
   errored: Oops, your solution didn't work
-  exam_authorization_pending_explanation_html: You have until <strong>%{end_time}</strong> (%{location} time) to register. After that date, your request will be processed and you will receive a confirmation. <br> Don't forget to check the notifications!
-  exam_authorization_request_approved_html: Your request was approved, don't forget to log in at <strong>%{date}</strong> (%{location} time). Good luck!
-  exam_authorization_request_created: You registered for the exam on %{friendly_date}
-  exam_authorization_request_rejected: Your request was rejected because you didn't meet the requirements.
-  exam_authorization_request_saved: You've changed your registration to the exam to %{friendly_date}
-  exam_authorization_request_updated: Your registration to %{description} has been updated
-  exam_registration_choose_exam: Choose date and time to attend to the exam
-  exam_registration_explanation_html: You have until <strong>%{date}</strong> (%{location} time) to register. After that date, your request will be processed and you will receive a confirmation. <br> Don't forget to check the notifications!
-  exam_registration_finished_html: Registration for this exam ended on <strong>%{date}</strong> (%{location} time)
-  exam_registration_open: Registrations open for %{description}!
-  exam_registration_to: Registration to %{description}
-  exams_will_be_here: Your exams in the organization will appear here.
-  exams: Exams
   exercise: Exercise
   exercises: Exercises
   exercise_count: exercises
@@ -134,7 +110,6 @@ en:
   exercise_number: Exercise %{number}
   exercise_success_rate: Exercises success rate
   exit: Exit
-  exp_points: experience points.
   expectations: Expectations
   expected_state: Expected board
   explain_redirect: You have registered in another organization
@@ -153,7 +128,6 @@ en:
   forum_terms_link: If you have any questions, please check %{terms_link}
   fullscreen: "Fullscreen (F11)"
   gender: Gender
-  get_messages: "View messages"
   go_to: 'Go to %{organization}'
   gone_explanation: This content is no longer available.
   guide: Guide
@@ -176,7 +150,6 @@ en:
   keep_learning: Keep learning!
   kids_default_success: You did it great!
   language: Language
-  last_message: Last message
   last_name: Last Name
   last_submission_date: Last submission
   latest_exercises: Latest exercises
@@ -194,35 +167,17 @@ en:
     title:
       custom: You have a new notification!
       delete_account: Confirm account deletion
-      exam_authorization_request_updated: There are updates in your exam registration
-      exam_authorization_request_rejected: Exam registration rejected
-      exam_registration: Exam registrations open
     subtitle:
       delete_account: You've requested to delete your Mumuki account
-      exam_authorization_request_approved: Your registration request to the exam has been approved.
-      exam_authorization_request_rejected: Your registration request to the exam has been rejected because the requirements weren't met.
-      exam_registration: ¡You can register for the exam!
     text:
       delete_account: Once your account is deleted, your progress and personal data will be deleted as well and you will not be able to access this account again or request the restoration of the deleted information. <br><br> This is irreversible and permanent. <br><br> Do you understand the consequences and still want to delete your account?
-      exam_authorization_request_approved: You can sit for the exam on %{exam_start_date} by going into the platform. ¡Good luck!
-      exam_authorization_request_rejected: ¡Don't be upset! You did a great job and we hope you'll keep learning programming.
-      exam_registration: You have until %{exam_registration_deadline} to sign up. In order to be approved, you must meet the requirements.
     button:
       custom: My notifications
       delete_account: Delete Account
-      exam_registration: Sign up for the exam
-      exam_authorization_request_approved: Go to the platform
-      exam_authorization_request_rejected: My exams
   male: Male
   manage_notification_subscriptions: Manage your notification subscriptions
   manage_notifications: Manage notifications
   manual_evaluation_pending: Thanks for submitting your solution! It will be revised by the course teachers soon
-  message: Message
-  message_deleted: This message was deleted because it %{motive}, which violates the %{forum_terms}.
-  messages: Messages
-  messages_pluralized:
-    one: Message
-    other: Messages
   moderation: Mentoring
   moderator: Mentor
   moderator_take_care:
@@ -242,13 +197,10 @@ en:
   need_help: I need help!
   never: never
   new: New
-  new_message_placeholder: Write a message for your teacher...
-  new_message_received: You have a new message from %{sender}
   next_exercise: Next
   next_lesson: 'Next Guide: %{name}'
   no_exercises: Nobody created an exercise for this search yet
   no_guides: Nobody created a guide for this search yet
-  no_messages: It seems you don't have any messages yet!
   no_need_hint: This exercise has no hint
   no_questions: It seems there isn't any question yet.
   no_submissions: It seems like you haven't tried to solve this exercise
@@ -257,8 +209,6 @@ en:
   not_in_any_organizations: It seems you aren't in any organizations yet!
   notification_subject:
     custom: General announcements
-    exam_authorization_request_updated: Exam registrations updated
-    exam_registration: Exam registrations enabled
   notifications: Notifications
   notifications_will_be_here: Notifications will be here
   notify_problem_with_exercise: Report a bug
@@ -269,21 +219,17 @@ en:
   opened_count: '%{count} opened'
   organization_read_only_legend: 'You are in reading mode. You will only be able to access the exercises that you did previously and you will not be able to send new solutions'
   other: Other
-  out_of_attempts: You've run out of attempts. You should proceed to the next exercise!
   output: Output
   overview: Overview
   passed: Everything is in order! Your solution passed all our tests!
   passed_with_warnings: It worked, but you can do better
   pending: pending
-  pending_messages: You have unread messages
-  pending_messages_explanation: You can't send new solutions until you read pending messages
   pending_review: Pending review
   pending_review_count: '%{count} for review'
   permissions: Permissions
   please_validate: 'Please validate your data before continue:'
   preferences_updated_successfully: Preferences updated successfully
   preview: Preview
-  preview_error: The preview cannot be shown. Check your internet connection or try with a shorter message.
   previous_exercise: Previous
   problem_with_exercise: '[Mumuki] Problem with exercise: %{title}'
   processing_your_solution: We are processing you solution
@@ -307,7 +253,6 @@ en:
   select_file: Select file
   sending_solution: Sending solution
   show: Show
-  show_message: Show message
   sign_in: Sign in
   sign_in_action: sign in
   sign_out: Sign Out

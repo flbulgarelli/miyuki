@@ -22,10 +22,6 @@ module IconsHelper
     fa_icon(*icon_for(contextualization))
   end
 
-  def discussion_status_fa_icon(discussion)
-    contextualization_fa_icon(discussion)
-  end
-
   def icon_for(iconizable)
     iconized = iconizable.iconize
     [iconized[:type], class: "text-#{iconized[:class]} status-icon"]

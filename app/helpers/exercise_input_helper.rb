@@ -27,16 +27,8 @@ module ExerciseInputHelper
     end
   end
 
-  def should_render_exercise_tabs?(exercise, &block)
-    !exercise.hidden? && (exercise.queriable? || exercise.extra_visible? || block&.call)
-  end
-
-  def should_render_problem_tabs?(exercise, user)
-    should_render_exercise_tabs?(exercise) { exercise.has_messages_for? user }
-  end
-
-  def should_render_message_input?(exercise, organization = Organization.current)
-    exercise.is_a?(Problem) && !exercise.hidden? && organization.raise_hand_enabled?
+  def should_render_problem_tabs?(exercise)
+    !exercise.hidden? && (exercise.queriable? || exercise.extra_visible?)
   end
 
   def should_render_need_help_dropdown?(assignment, organization = Organization.current)

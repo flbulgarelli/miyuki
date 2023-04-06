@@ -29,13 +29,6 @@ module BreadcrumbsHelper
     breadcrumb_list_item link_to(e, link_path), clazz
   end
 
-  def breadcrumbs_for_discussion(discussion, e)
-    discussions_breadcrumb = breadcrumbs_for_linkable(e, link_to(t(:discussions), item_discussions_path(e)))
-    discussion_item = breadcrumb_list_item(breadcrumb_name_for(discussion), 'last')
-
-    discussions_breadcrumb + discussion_item
-  end
-
   def breadcrumb_name_for(discussion)
     discussion.friendly.truncate_words(4)
   end

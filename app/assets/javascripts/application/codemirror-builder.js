@@ -5,10 +5,6 @@
     $('.btn-submit').click();
   }
 
-  function submitMessage() {
-    $('.discussion-new-message-button').click();
-  }
-
   var codeMirrorDefaults = {
     autofocus: false,
     tabSize: 2,
@@ -54,8 +50,6 @@
       this.editor = this.createEditor({
         mode: 'text',
         extraKeys: {
-          'Cmd-Enter': submitMessage,
-          'Ctrl-Enter': submitMessage,
           'Tab': function (cm) {
             mumuki.editor.indentWithSpaces(cm);
           }
