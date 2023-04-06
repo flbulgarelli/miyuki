@@ -1,0 +1,35 @@
+{
+  "main": {
+    "kibi": {
+      "clips": [
+        "context",
+        "failure",
+        "jump",
+        "passed_with_warnings",
+        "success2_l",
+        "success_l"
+      ],
+      "actions": {
+        "blink": "jump",
+        "talk": "jump"
+      }
+    }
+  },
+  "extra": {
+    "magnifying_glass": {
+      "clips": [
+        "apparition",
+        "loop"
+      ],
+      "actions": {
+        "show": {
+          "type": "sequence",
+          "animations": [
+            "apparition",
+            "loop"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+<%= content_for :breadcrumbs do %>
+  <%= breadcrumbs @chapter, t(:appendix) %>
+<% end %>
+
+<h1><%= t :appendix %></h1>
+
+<%= @chapter.appendix_html %>
