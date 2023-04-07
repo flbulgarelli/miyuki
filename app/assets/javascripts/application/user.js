@@ -13,6 +13,9 @@
    * @type {number?}
    * */
   get id() {
+    if (!this._id) {
+      this.load();
+    }
     return this._id;
   },
 

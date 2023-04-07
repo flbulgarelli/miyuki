@@ -8,7 +8,7 @@ mumuki.syncMode = (() => {
    */
   class ClientSyncMode {
     syncProgress() {
-      mumuki.progress.updateWholeProgressBar($anchor => this._getProgressListItemClass($anchor));
+      mumuki.progress.updateProgressListItems($anchor => this._getProgressListItemClass($anchor));
     }
 
     syncEditorContent() {
@@ -21,12 +21,15 @@ mumuki.syncMode = (() => {
     }
 
     /**
-     * @param {JQuery} $anchor
+     * @param {JQuery} $item
      */
-    _getProgressListItemClass($anchor) {
-      const exerciseId = $anchor.data('mu-exercise-id');
+    _getProgressListItemClass($item) {
+      const exerciseId = $item.data('mu-exercise-id');
       const status = mumuki.SubmissionsStore.getLastSubmissionStatus(exerciseId);
-      return mumuki.renderers.progressListItemClassForStatus(status, exerciseId == mumuki.exercise.id);
+      return mumuki.renderers.progressListItemClassForStatus(
+        status,
+        exerciseId == mumuki.exercise.id,
+        $item.hasClass('status-icon'));
     }
 
   }

@@ -14,16 +14,16 @@ mumuki.progress = (() => {
    *
    * @param {(anchor: JQuery) => string} f
    */
-  function updateWholeProgressBar(f) {
+  function updateProgressListItems(f) {
     $('.progress-list-item').each((_, it) => {
-      const $anchor = $(it);
-      $anchor.attr('class', f($anchor));
+      const $item = $(it);
+      $item.attr('class', f($item));
     });
   }
 
   return {
     updateProgressBarAndShowModal,
-    updateWholeProgressBar
+    updateProgressListItems
   };
 })();
 

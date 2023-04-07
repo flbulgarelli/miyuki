@@ -8,7 +8,10 @@ module IconsHelper
   end
 
   def assignment_status_icon(assignment)
-    link_to contextualization_fa_icon(assignment),
+    link_to contextualization_fa_icon(assignment, {
+              class: 'progress-list-item',
+              data: {'mu-exercise-id': assignment.exercise.id}
+            }),
             exercise_path(assignment.exercise) if current_user?
   end
 
@@ -18,13 +21,13 @@ module IconsHelper
 
   private
 
-  def contextualization_fa_icon(contextualization)
-    fa_icon(*icon_for(contextualization))
+  def contextualization_fa_icon(contextualization, options={})
+    fa_icon(*icon_for(contextualization, options))
   end
 
-  def icon_for(iconizable)
+  def icon_for(iconizable, options={})
     iconized = iconizable.iconize
-    [iconized[:type], class: "text-#{iconized[:class]} status-icon"]
+    [iconized[:type], class: "text-#{iconized[:class]} status-icon #{options[:class]}", data: options[:data]]
   end
 
   def icon_class_for(iconizable)

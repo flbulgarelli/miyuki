@@ -53,8 +53,12 @@ mumuki.renderers.results = (() => {
    * @param {boolean} [active]
    * @returns {string}
    */
-  function progressListItemClassForStatus(status, active = false) {
-    return `progress-list-item text-center ${classForStatus(status)} ${active ? 'active' : ''}`;
+  function progressListItemClassForStatus(status, active = false, icon = false) {
+    if (icon) {
+      return `fas ${iconForStatus(status)} progress-list-item text-${classForStatus(status)} status-icon`
+    } else {
+      return `progress-list-item text-center ${classForStatus(status)} ${active ? 'active' : ''}`;
+    }
   }
 
   /**

@@ -80,11 +80,16 @@ mumuki.page.editors = [];
     });
   }
 
+  function setContent(content) {
+    mumuki.page.editors[0].getDoc().setValue(content);
+  }
+
   mumuki.editor.reset = resetEditor;
   mumuki.editor.toggleFullscreen = toggleFullscreen;
   mumuki.editor.formatContent = formatContent;
   mumuki.editor.indentWithSpaces = indentWithSpaces;
   mumuki.editor.syncContent = syncContent;
+  mumuki.editor.setContent = setContent;
 
 
   mumuki.load(() => {
