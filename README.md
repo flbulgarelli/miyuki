@@ -1,24 +1,30 @@
-# README
+# minumuki
+> Stateless, minimalistic mumuki laboratory
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a fork of mumuki-laboratory that:
 
-Things you may want to cover:
+  * Removes a lot of boilerplate and dark features
+  * Updates ruby and rails to 3.2 and 7, respectively
+  * Makes incognito mode work - current implementation had a lot of bugs and missing parts
+  * Makes deployment easier
 
-* Ruby version
+### Create the database
 
-* System dependencies
+```
+rails db:create
+```
 
-* Configuration
+### Start the server
 
-* Database creation
+```
+rails s
+```
 
-* Database initialization
+### Pending
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Add installation instructions
+- Remove unnecessary gems / tables
+- Add dockerfile and docker-compose
+- Add prebuilt content dumps
+- Create specific docker tags for each prototypical content
+- Make inspections translations work - probably some mulang config is missing
