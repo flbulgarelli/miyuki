@@ -47,14 +47,14 @@ class ApplicationController < ActionController::Base
   end
 
   def set_current_organization!
-    Organization.find_by!(name: organization_name).switch!
+    Organization.locate!(organization_name).switch!
   rescue => e
     Organization.base.switch!
     raise e
   end
 
   def organization_name
-    Mumukit::Platform.organization_name(request)
+    Mumukit::Platform.organization_name(request) || 'base'
   end
 
   def visit_organization!

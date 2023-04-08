@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get '/' => 'root#show'
+
   Mumukit::Platform.map_organization_routes!(self) do
     root to: 'book#show'
 
