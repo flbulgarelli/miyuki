@@ -15,6 +15,7 @@
   *  class_for_progress_list_item?: string,
   *  guide_finished_by_solution?: boolean,
   *  title_html?: string,
+  *  html?: string,
   * }} SubmissionResult
   */
 

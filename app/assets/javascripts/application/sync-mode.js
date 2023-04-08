@@ -7,17 +7,34 @@ mumuki.syncMode = (() => {
    * from local storage
    */
   class ClientSyncMode {
+    syncState() {
+      this.syncProgress();
+
+      const lastSubmission = mumuki.SubmissionsStore.getLastSubmissionAndResult(mumuki.exercise.id);
+      if (lastSubmission) {
+        this.syncEditorContent(lastSubmission.submission);
+        this.syncResults(lastSubmission.result);
+      }
+    }
+
     syncProgress() {
       mumuki.progress.updateProgressListItems($anchor => this._getProgressListItemClass($anchor));
     }
 
-    syncEditorContent() {
-      const lastSubmission = mumuki.SubmissionsStore.getLastSubmissionAndResult(mumuki.exercise.id);
-      if (lastSubmission) {
-        /** @todo extract core module  */
-        const content = mumuki.SubmissionsStore.submissionSolutionContent(lastSubmission.submission);
-        mumuki.editors.setContent(content);
-      }
+    /**
+     * @param {Submission} submission
+     */
+    syncEditorContent(submission) {
+      const content = mumuki.SubmissionsStore.submissionSolutionContent(submission);
+      mumuki.editors.setContent(content);
+    }
+
+    /**
+     * @param {SubmissionResult} result
+     */
+    syncResults(result) {
+      const $submissionsResultsArea = $('.submission-results');
+      $submissionsResultsArea.html(result.html);
     }
 
     /**
@@ -41,11 +58,7 @@ mumuki.syncMode = (() => {
    * and no additional actions are needed.
    */
   class ServerSyncMode {
-    syncProgress() {
-      // nothing
-    }
-
-    syncEditorContent() {
+    syncState() {
       // nothing
     }
   }
@@ -73,6 +86,5 @@ mumuki.syncMode = (() => {
 
 mumuki.load(() => {
   mumuki.syncMode._selectSyncMode();
-  mumuki.syncMode._current.syncProgress();
-  mumuki.syncMode._current.syncEditorContent();
+  mumuki.syncMode._current.syncState();
 });
