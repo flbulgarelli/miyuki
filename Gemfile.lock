@@ -18,6 +18,13 @@ PATH
       rails (~> 7.0.0)
 
 PATH
+  remote: ../mumukit-bridge
+  specs:
+    mumukit-bridge (4.2.0)
+      mumukit-core (~> 1.19)
+      rest-client (~> 2.1)
+
+PATH
   remote: ../mumukit-core
   specs:
     mumukit-core (1.19.1)
@@ -183,9 +190,6 @@ GEM
     mumukit-auth (7.14.0)
       jwt (~> 1.5)
       mumukit-core (~> 1.8)
-    mumukit-bridge (4.2.0)
-      mumukit-core (~> 1.10)
-      rest-client
     mumukit-content-type (1.12.0)
       mumuki-emojis (~> 1.0)
       mumukit-core (~> 1.0)

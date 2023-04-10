@@ -5,8 +5,10 @@ ruby "3.2.0"
 
 gem 'mumukit-core', path: '../mumukit-core'
 gem 'mumuki-domain', path: '../mumuki-domain'
+gem 'mumukit-bridge', path: '../mumukit-bridge'
 gem 'mumuki-styles', '~> 3.1'
 gem 'muvment', '~> 1.4'
+
 
 gem 'font_awesome5_rails', '~> 1.3'
 
