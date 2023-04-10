@@ -18,7 +18,7 @@ end
 
 Bundler.require(*Rails.groups)
 
-module Minimuki
+module Miyuki
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
