@@ -6,9 +6,9 @@ PATH
       mulang (~> 6.0)
       mumukit-assistant (~> 0.2)
       mumukit-auth (~> 7.11)
-      mumukit-bridge (~> 4.1)
+      mumukit-bridge (~> 4.3)
       mumukit-content-type (~> 1.11)
-      mumukit-core (~> 1.19)
+      mumukit-core (~> 1.20)
       mumukit-directives (~> 0.5)
       mumukit-inspection (~> 6.0)
       mumukit-login (~> 7.0)
@@ -16,21 +16,6 @@ PATH
       mumukit-randomizer (~> 1.2)
       mumukit-sync (~> 1.0)
       rails (~> 7.0.0)
-
-PATH
-  remote: ../mumukit-bridge
-  specs:
-    mumukit-bridge (4.2.0)
-      mumukit-core (~> 1.19)
-      rest-client (~> 2.1)
-
-PATH
-  remote: ../mumukit-core
-  specs:
-    mumukit-core (1.19.1)
-      activesupport (>= 6.0, < 8)
-      i18n (>= 0.7, < 2)
-      rack (>= 1.5)
 
 GEM
   remote: https://rubygems.org/
@@ -190,12 +175,19 @@ GEM
     mumukit-auth (7.14.0)
       jwt (~> 1.5)
       mumukit-core (~> 1.8)
+    mumukit-bridge (4.3.0)
+      mumukit-core (~> 1.20)
+      rest-client (~> 2.1)
     mumukit-content-type (1.12.0)
       mumuki-emojis (~> 1.0)
       mumukit-core (~> 1.0)
       redcarpet (~> 3.3)
       rouge (~> 3.1)
       sanitize (~> 6.0)
+    mumukit-core (1.20.0)
+      activesupport (>= 6.0, < 8)
+      i18n (>= 0.7, < 2)
+      rack (>= 1.5)
     mumukit-directives (0.5.0)
       mumukit-core (>= 0.1, < 2)
     mumukit-inspection (6.0.0)
@@ -406,8 +398,8 @@ DEPENDENCIES
   momentjs-rails (~> 2.10)
   mumuki-domain!
   mumuki-styles (~> 3.1)
-  mumukit-bridge!
-  mumukit-core!
+  mumukit-bridge (~> 4.3)
+  mumukit-core (~> 1.20)
   muvment (~> 1.4)
   nprogress-rails (~> 0.2)
   puma (~> 5.0)

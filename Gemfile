@@ -3,9 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.0"
 
-gem 'mumukit-core', path: '../mumukit-core'
+gem 'mumukit-core', '~> 1.20'
 gem 'mumuki-domain', path: '../mumuki-domain'
-gem 'mumukit-bridge', path: '../mumukit-bridge'
+gem 'mumukit-bridge', '~> 4.3'
 gem 'mumuki-styles', '~> 3.1'
 gem 'muvment', '~> 1.4'
 
