@@ -9,7 +9,7 @@ I18n.load_translations_path File.join(__dir__, 'laboratory', 'locales', '*.yml')
 require 'mumuki/domain'
 require 'mumuki/styles'
 require 'muvment'
-
+require 'mulang'
 
 Mumukit::Platform.configure do |config|
   config.application = Mumukit::Platform.laboratory
