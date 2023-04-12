@@ -18,7 +18,7 @@ This is a fork of mumuki-laboratory that:
 ### Create the database
 
 ```
-rails db:create
+rails db:create db:schema:load
 ```
 
 ### Start the server
@@ -40,4 +40,3 @@ docker run -it --rm -p 3000:3000 flbulgarelli/miyuki
 - Add dockerfile and docker-compose
 - Add prebuilt content dumps
 - Create specific docker tags for each prototypical content
-- Make inspections translations work - probably some mulang config is missing
