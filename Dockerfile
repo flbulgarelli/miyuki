@@ -32,6 +32,6 @@ COPY db/ /var/www/miyuki/db/
 
 ENV RAILS_LOG_TO_STDOUT true
 
-CMD ["rails s"]
+CMD ["rails", "s"]
 
 EXPOSE 3000

@@ -27,6 +27,12 @@ rails db:create
 rails s
 ```
 
+## Start the server from docker
+
+```
+docker run -it --rm -p 3000:3000 flbulgarelli/miyuki
+```
+
 ### Pending
 
 - Add installation instructions
