@@ -31,6 +31,7 @@ COPY bin/ /var/www/miyuki/bin/
 COPY db/ /var/www/miyuki/db/
 
 ENV RAILS_LOG_TO_STDOUT true
+ENV RAILS_SERVE_STATIC_FILES true
 
 CMD ["rails", "s"]
 
