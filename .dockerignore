@@ -1,7 +1,7 @@
 /db/seeds.rb
 **/*.log
-**/tmp/**
-**/spec/**
-**/dummy/**
-**/.github/**
-**/.git/**
+**/tmp
+**/spec
+**/dummy
+**/.github
+**/.git
