@@ -1,5 +1,7 @@
-PATH
-  remote: ../mumuki-domain
+GIT
+  remote: https://github.com/mumuki/mumuki-domain.git
+  revision: 92c76c79b7ba2462ea08274abde798c7574b05a3
+  branch: chore-update-ruby-version
   specs:
     mumuki-domain (9.23.0)
       email_validator (~> 1.6)
@@ -85,7 +87,7 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-    addressable (2.8.3)
+    addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
     amq-protocol (2.3.2)
     bindex (0.8.1)
@@ -141,7 +143,7 @@ GEM
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
     io-console (0.6.0)
-    irb (1.6.3)
+    irb (1.6.4)
       reline (>= 0.3.0)
     jwt (1.5.6)
     keisan (0.9.1)
@@ -188,8 +190,8 @@ GEM
       activesupport (>= 6.0, < 8)
       i18n (>= 0.7, < 2)
       rack (>= 1.5)
-    mumukit-directives (0.5.0)
-      mumukit-core (>= 0.1, < 2)
+    mumukit-directives (0.6.0)
+      mumukit-core (~> 1.20)
     mumukit-inspection (6.0.0)
       mulang (~> 6.0)
       mumukit-core (> 1.0, < 2)
@@ -209,11 +211,11 @@ GEM
     mumukit-nuntius (6.7.1)
       bunny (~> 2.3)
       mumukit-core (~> 1.8)
-    mumukit-platform (7.1.0)
-      activemodel (>= 4.0)
+    mumukit-platform (7.2.0)
+      activemodel (>= 6.0, < 8)
       mumukit-auth (~> 7.6)
-      mumukit-bridge (>= 3.5, < 5)
-      mumukit-core (~> 1.2)
+      mumukit-bridge (~> 4.2)
+      mumukit-core (~> 1.20)
       mumukit-nuntius (~> 6.0)
     mumukit-randomizer (1.2.0)
       activesupport
@@ -235,7 +237,7 @@ GEM
       net-protocol
     netrc (0.11.0)
     nio4r (2.5.9)
-    nokogiri (1.14.2-x86_64-linux)
+    nokogiri (1.14.3-x86_64-linux)
       racc (~> 1.4)
     nprogress-rails (0.2.0.2)
     oauth2 (2.0.9)

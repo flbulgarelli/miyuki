@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.2.2"
 
 gem 'mumukit-core', '~> 1.20'
-gem 'mumuki-domain', path: '../mumuki-domain'
+gem 'mumuki-domain', github: 'mumuki/mumuki-domain', branch: 'chore-update-ruby-version'
 gem 'mumukit-bridge', '~> 4.3'
 gem 'mumuki-styles', '~> 3.1'
 gem 'muvment', '~> 1.4'
