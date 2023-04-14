@@ -4,10 +4,6 @@ MAINTAINER Franco Leonardo Bulgarelli
 ENV RAILS_ENV production
 ENV RACK_ENV production
 
-# RUN apt-get update && \
-#     apt-get install -y --force-yes --no-install-recommends git cron libpq5=10.* libpq-dev=10.* && \
-#     rm -rf /var/lib/apt/lists/*
-
 RUN gem install bundler -v 2.4
 
 RUN mkdir -p /var/www/miyuki
