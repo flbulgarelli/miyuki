@@ -1,5 +1,7 @@
 # ❄️ Miyuki / みゆき
 
+![Open Collective backers and sponsors](https://img.shields.io/opencollective/all/mumuki?color=%23ff5b81)
+
 > Stateless, **mi**nimalistic mum**uki** laboratory
 
 https://user-images.githubusercontent.com/677436/230702139-114d099f-8ab7-4d71-be12-f4f1d52388ec.mp4
