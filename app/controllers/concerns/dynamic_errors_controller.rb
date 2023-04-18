@@ -13,7 +13,6 @@ module DynamicErrorsController
     rescue_from Mumuki::Domain::ForbiddenError, with: :forbidden
     rescue_from Mumuki::Domain::UnauthorizedError, with: :unauthorized
     rescue_from Mumuki::Domain::GoneError, with: :gone
-    rescue_from Mumuki::Domain::BlockedForumError, with: :blocked_forum
     rescue_from Mumuki::Domain::DisabledError, with: :disabled
     rescue_from ActiveRecord::RecordInvalid, with: :bad_record
     rescue_from Mumuki::Domain::UnpreparedOrganizationError, with: :unprepared_organization
