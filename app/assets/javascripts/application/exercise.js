@@ -21,7 +21,7 @@
     }
   });
 
-  window.addEventListener("turbolinks:before-visit", (event) => {
+  window.addEventListener("turbo:before-visit", (event) => {
     if (shouldWarnOfChanges() && !confirm(mumuki.I18n.t('unsaved_progress'))) event.preventDefault();
   });
 })();

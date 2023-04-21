@@ -17,7 +17,6 @@
 //= require rails-ujs
 //= require mumuki-styles
 //= require nprogress
-//= require nprogress-turbolinks
 //= require nprogress-ajax
 //= require jquery-console
 

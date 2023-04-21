@@ -11,7 +11,15 @@
 
 
   <%= open_graph_tags subject %>
-  <%= assets_include_tags %>
+  <meta name="turbo-cache-control" content="no-cache">
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+  <%= javascript_importmap_tags %>
+
+  <link rel="icon" type="image/x-icon" href="<%= Organization.current.favicon_url %>" data-turbo-track="reload">
+  <link rel="stylesheet" type="text/css" href="<%= theme_stylesheet_url %>" data-turbo-track="reload">
+  <script type="text/javascript" src="<%= extension_javascript_url %>" defer data-turbo-track="reload"></script>
+
   <%= csrf_meta_tags %>
   <%= globals_tags %>
 </head>

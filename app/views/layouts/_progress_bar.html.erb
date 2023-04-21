@@ -4,7 +4,7 @@
     <% next unless show_content?(assignment.exercise) %>
     <% exercise = assignment.exercise %>
     <a
-      <%= turbolinks_enable_for exercise %>
+      <%= turbo_enable_for exercise %>
       href="<%= exercise_path(exercise)%>"
       aria-label="<%= exercise.navigable_name %>"
       data-bs-toggle="tooltip"

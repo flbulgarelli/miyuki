@@ -28,8 +28,8 @@ module LinksHelper
     link_to t(:faqs), faqs_path, target: '_blank' if faqs_enabled_here?
   end
 
-  def turbolinks_enable_for(exercise)
-    %Q{data-turbolinks="#{!exercise.input_kids?}"}.html_safe
+  def turbo_enable_for(exercise)
+    %Q{data-turbo="#{!exercise.input_kids?}"}.html_safe
   end
 
   def faqs_enabled_here?

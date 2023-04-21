@@ -11,7 +11,7 @@
  * content sources that can not me mapped to standard selectors {@code mu-custom-editor-value},
  * {@code mu-custom-editor-extra} and {@code mu-custom-editor-test}
  *
- * CustomEditor sources are cleared after page reload even when using turbolinks
+ * CustomEditor sources are cleared after page reload even when using turbo
  */
 mumuki.CustomEditor = (() => {
 
