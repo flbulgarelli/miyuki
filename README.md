@@ -17,28 +17,47 @@ This is a fork of mumuki-laboratory that:
   * Uses `Sqlite3` instead of `PostgreSQL`
   * Makes deployment easier
 
-### Create the database
+## Local installation
+
+### Install environment
 
 ```
-rails db:create db:schema:load
+rbenv install
+bundle install
 ```
+
+### Download sqlite3 database
+
+1. Download `pdep` database from [here](https://drive.google.com/file/d/1ecb0zk7EDY-71P_H-2lvX26DrsWGLOrj/view?usp=sharing)
+2. Rename and copy it in `bin/development.sqlite3`
 
 ### Start the server
+
+This will start miyuki server only - required runners need to be started following by their own.
 
 ```
 rails s
 ```
 
-## Start the server from docker
+## Docker Installation
+
+### Prepare database
+
+In order to prepare database, follow the same instructions that with local installation.
+
+### Start the server from docker
+
+Again, this will start miyuki server **only**:
 
 ```
-docker run -it --rm -p 3000:3000 flbulgarelli/miyuki
+docker run -it --rm \
+           -p 3000:3000 \
+           -v ./db/development.sqlite3:/var/www/miyuki/db/production.sqlite3 \
+           flbulgarelli/miyuki-server
 ```
 
-### Pending
+### Start a full running system
 
-- Add installation instructions
-- Remove unnecessary gems / tables
-- Add dockerfile and docker-compose
-- Add prebuilt content dumps
-- Create specific docker tags for each prototypical content
+```
+docker compose -f docker/docker-compose.yml -f docker/docker-compose.pdep.yml  up -d
+```
