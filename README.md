@@ -29,7 +29,7 @@ bundle install
 ### Download sqlite3 database
 
 1. Download `pdep` database from [here](https://drive.google.com/file/d/1ecb0zk7EDY-71P_H-2lvX26DrsWGLOrj/view?usp=sharing)
-2. Rename and copy it in `bin/development.sqlite3`
+2. Rename and copy it in `db/development.sqlite3`
 
 ### Start the server
 

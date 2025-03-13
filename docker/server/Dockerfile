@@ -1,8 +1,7 @@
 FROM ruby:3.2.2-bullseye
-MAINTAINER Franco Leonardo Bulgarelli
 
-ENV RAILS_ENV production
-ENV RACK_ENV production
+ENV RAILS_ENV=production
+ENV RACK_ENV=production
 
 RUN gem install bundler -v 2.4
 
@@ -19,6 +18,7 @@ COPY public /var/www/miyuki/public/
 COPY vendor /var/www/miyuki/vendor/
 COPY config.ru Rakefile /var/www/miyuki/
 
+ENV SECRET_KEY_BASE="PLEASECHANGEME"
 RUN bundle exec rake assets:precompile
 
 ## Copy database and shell scripts
@@ -26,8 +26,8 @@ RUN bundle exec rake assets:precompile
 COPY bin/ /var/www/miyuki/bin/
 COPY db/ /var/www/miyuki/db/
 
-ENV RAILS_LOG_TO_STDOUT true
-ENV RAILS_SERVE_STATIC_FILES true
+ENV RAILS_LOG_TO_STDOUT=true
+ENV RAILS_SERVE_STATIC_FILES=true
 
 CMD ["rails", "s"]
 
