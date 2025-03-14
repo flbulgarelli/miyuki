@@ -13,6 +13,6 @@ services:
     container_name: miyuki-server
     build:
       context: ..
-      dockerfile: docker/server/Dockerfileg
+      dockerfile: docker/server/Dockerfile
     ports:
       - "3000:3000"
