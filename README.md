@@ -26,16 +26,11 @@ rbenv install
 bundle install
 ```
 
-### Download sqlite3 database
-
-1. Download `pdep` database from [here](https://drive.google.com/file/d/1ecb0zk7EDY-71P_H-2lvX26DrsWGLOrj/view?usp=sharing)
-2. Rename and copy it in `db/development.sqlite3`
-
 ### Start the server
 
 This will start miyuki server only - required runners need to be started following by their own.
 
-```
+```bash
 rails s
 ```
 
@@ -56,8 +51,6 @@ docker run -it --rm \
            flbulgarelli/miyuki-server
 ```
 
-### Start a full running system
+## Prebuilt distributions
 
-```
-docker compose -f docker/docker-compose.yml -f docker/docker-compose.pdep.yml  up -d
-```
+Go to any of the `dists/` subfolders and follow instructions.
