@@ -1,0 +1,77 @@
+version: "3"
+services:
+  ## ======
+  ## Server
+  ## ======
+
+  miyuki-server:
+    links:
+      - miyuki-haskell-runner
+      - miyuki-prolog-runner
+    volumes:
+      - ../db/development.sqlite3:/var/www/miyuki/db/production.sqlite3
+    depends_on:
+      - miyuki-haskell-runner
+      - miyuki-prolog-runner
+
+  ## =======
+  ## Runners
+  ## =======
+
+  miyuki-haskell-runner:
+    image: flbulgarelli/miyuki-haskell-runner
+    container_name: miyuki-haskell-runner
+    privileged: true
+    volumes:
+      - /tmp:/tmp
+    command: bundle exec puma -p 3030
+    depends_on:
+      - miyuki-dind
+  miyuki-prolog-runner:
+    image: flbulgarelli/miyuki-prolog-runner
+    container_name: miyuki-prolog-runner
+    privileged: true
+    volumes:
+      - /tmp:/tmp
+    command: bundle exec puma -p 3033
+    depends_on:
+      - miyuki-dind
+  miyuki-text-runner:
+    image: flbulgarelli/miyuki-text-runner
+    container_name: miyuki-text-runner
+    privileged: true
+    volumes:
+      - /tmp:/tmp
+    command: bundle exec puma -p 3034
+    depends_on:
+      - miyuki-dind
+  miyuki-wollok-runner:
+    image: flbulgarelli/miyuki-wollok-runner
+    container_name: miyuki-wollok-runner
+    privileged: true
+    volumes:
+      - /tmp:/tmp
+    command: bundle exec puma -p 3035
+    depends_on:
+      - miyuki-dind
+
+  ## =======
+  ## Workers
+  ## =======
+
+  miyuki-haskell-worker-setup:
+      image: flbulgarelli/miyuki-haskell-runner
+      container_name: miyuki-haskell-worker-setup
+      restart: "no"
+      privileged: true
+      command: bundle exec ruby pull_worker.rb
+      depends_on:
+        - miyuki-dind
+  miyuki-prolog-worker-setup:
+      image: flbulgarelli/miyuki-prolog-runner
+      container_name: miyuki-prolog-worker-setup
+      restart: "no"
+      privileged: true
+      command: bundle exec ruby pull_worker.rb
+      depends_on:
+        - miyuki-dind

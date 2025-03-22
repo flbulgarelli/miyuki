@@ -1,0 +1,18 @@
+version: "3"
+services:
+  miyuki-dind:
+    container_name: miyuki-dind
+    image: docker:20-dind
+    privileged: true
+    environment:
+      DOCKER_TLS_CERTDIR:
+    volumes:
+      - /tmp:/tmp
+  miyuki-server:
+    image: flbulgarelli/miyuki-server
+    container_name: miyuki-server
+    build:
+      context: ..
+      dockerfile: docker/server/Dockerfile
+    ports:
+      - "3000:3000"
