@@ -9,7 +9,7 @@ services:
       - miyuki-haskell-runner
       - miyuki-prolog-runner
     volumes:
-      - ../db/development.sqlite3:/var/www/miyuki/db/production.sqlite3
+      - ./development.sqlite3:/var/www/miyuki/db/production.sqlite3
     depends_on:
       - miyuki-haskell-runner
       - miyuki-prolog-runner

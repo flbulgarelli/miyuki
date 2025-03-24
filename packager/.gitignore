@@ -13,6 +13,7 @@ dist
 docker
 dist-ssr
 *.local
+out
 
 # Editor directories and files
 .vscode/*
