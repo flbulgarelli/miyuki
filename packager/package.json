@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "description": "Stateless, minimalistic mumuki laboratory",
   "main": "src/index.js",
+  "author": { "name": "Miyuki"},
   "scripts": {
     "premake": "bash scripts/getDockerComposeFiles.sh pdep",
     "start": "electron-forge start",
