@@ -1,7 +1,3 @@
-#!/bin/bash
-
-set -e
-
 echo "Getting docker-compose files..."
 
 DIR="docker"
@@ -17,8 +13,8 @@ if [ "$#" -ne 1 ]; then
   exit 1
 fi
 
-DISTRIBUTION_NAME=$1
-cp ../dists/$DISTRIBUTION_NAME/docker-compose.yml "$DIR/docker-compose.$DISTRIBUTION_NAME.yml" || { echo "Failed to copy docker-compose.$DISTRIBUTION_NAME.yml"; exit 1; }
+DIST_NAME=$1
+cp ../dists/$DIST_NAME/docker-compose.yml "$DIR/docker-compose.$DIST_NAME.yml" || { echo "Failed to copy docker-compose.$DIST_NAME.yml"; exit 1; }
 
 echo "Getting database..."
 
