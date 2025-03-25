@@ -25,7 +25,7 @@ echo "Getting database..."
 DB_DIR="$DIR/development.sqlite3"
 DB_FILE_ID="1ecb0zk7EDY-71P_H-2lvX26DrsWGLOrj"
 if [ ! -f "$DB_DIR" ]; then
-  curl -O "$DB_DIR" "https://drive.google.com/uc?export=download&id=$DB_FILE_ID" || { echo "Failed to download development.sqlite3"; exit 1; }
+  curl -L -o "$DB_DIR" "https://drive.google.com/uc?export=download&id=$DB_FILE_ID" || { echo "Failed to download development.sqlite3"; exit 1; }
 else
   echo "development.sqlite3 already exists, skipping download"
 fi
