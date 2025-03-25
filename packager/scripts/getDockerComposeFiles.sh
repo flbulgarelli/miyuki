@@ -2,18 +2,25 @@ echo "Getting docker-compose files..."
 
 DIR="docker"
 
+# Load environment variables from .env file
+if [ -f .env ]; then
+  export $(cat .env | xargs)
+else
+  echo ".env file not found"
+  exit 1
+fi
+
+if [ -z "$DIST_NAME" ]; then
+  echo "DIST_NAME is not set in .env file"
+  exit 1
+fi
+
 if [ ! -d "$DIR" ]; then
   mkdir "$DIR"
 fi
 
 cp ../docker/docker-compose.yml "$DIR" || { echo "Failed to copy docker-compose.yml"; exit 1; }
 
-if [ "$#" -ne 1 ]; then
-  echo "Usage: $0 <distribution-name>"
-  exit 1
-fi
-
-DIST_NAME=$1
 cp ../dists/$DIST_NAME/docker-compose.yml "$DIR/docker-compose.$DIST_NAME.yml" || { echo "Failed to copy docker-compose.$DIST_NAME.yml"; exit 1; }
 
 echo "Getting database..."

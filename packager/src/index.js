@@ -29,14 +29,14 @@ app.whenReady().then(() => {
 
   exec(command, (error, stdout, stderr) => {
     if (error) {
-      console.error(`Error al ejecutar Docker Compose: ${error.message}`);
+      console.error(`Error on Docker Compose execution: ${error.message}`);
       return;
     }
     if (stderr) {
-      console.error(`Error en la salida: ${stderr}`);
+      console.error(`Error on output: ${stderr}`);
       return;
     }
-    console.log(`Salida de Docker Compose: ${stdout}`);
+    console.log(`Docker Compose output: ${stdout}`);
   });
 
   waitForServer("http://localhost:3000", () => {
@@ -53,6 +53,6 @@ function waitForServer(url, callback) {
                   callback();
               }
           })
-          .catch(() => console.log("Esperando a que el servidor esté disponible..."));
+          .catch(() => console.log("Waiting for server to be available..."));
   }, 3000);
 }

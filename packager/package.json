@@ -1,6 +1,6 @@
 {
-  "name": "tuki",
-  "productName": "tuki",
+  "name": "Miyuki",
+  "productName": "Miyuki",
   "version": "1.0.0",
   "description": "Stateless, minimalistic mumuki laboratory",
   "main": "src/index.js",

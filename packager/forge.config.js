@@ -2,6 +2,7 @@ module.exports = {
   packagerConfig: {
     asar: false,
     extraResource: ['docker/'],
+    executableName: "Miyuki"
   },
   rebuildConfig: {},
   makers: [
