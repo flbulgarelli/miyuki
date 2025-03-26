@@ -1,0 +1,32 @@
+{
+  "name": "Miyuki",
+  "productName": "Miyuki",
+  "version": "1.0.0",
+  "description": "Stateless, minimalistic mumuki laboratory",
+  "main": "src/index.js",
+  "author": {
+    "name": "Miyuki"
+  },
+  "scripts": {
+    "premake": "bash scripts/getDockerComposeFiles.sh",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
+  },
+  "keywords": [],
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "electron-squirrel-startup": "^1.0.1"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.7.0",
+    "@electron-forge/maker-deb": "^7.7.0",
+    "@electron-forge/maker-rpm": "^7.7.0",
+    "@electron-forge/maker-squirrel": "^7.7.0",
+    "@electron-forge/maker-zip": "^7.7.0",
+    "@electron-forge/plugin-fuses": "^7.7.0",
+    "@electron/fuses": "^1.8.0",
+    "electron": "35.0.3"
+  }
+}
