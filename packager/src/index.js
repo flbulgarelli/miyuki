@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron');
 const { exec } = require('child_process');
+const path = require('path'); 
 const dotenv = require('dotenv');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -18,41 +19,49 @@ app.on('window-all-closed', () => {
   }
 });
 
+function sendLog(message) {
+  mainWindow.webContents.send('log-message', message);
+}
+
 app.whenReady().then(() => {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
-      nodeIntegration: true, 
+      preload: path.join(__dirname, 'preload.js')
     },
   });
 
+  mainWindow.loadFile(path.join(__dirname, 'loading.html'));
+
   exec(command, (error, stdout, stderr) => {
     if (error) {
-      console.error(`Error on Docker Compose execution: ${error.message}`);
+      sendLog(`Error on Docker Compose execution: ${error.message}`);
+      console.log(`Error on Docker Compose execution: ${error.message}`);
+
       return;
     }
     if (stderr) {
-      console.error(`Error on output: ${stderr}`);
+      sendLog(`Error on output: ${stderr}`);
       return;
     }
-    console.log(`Docker Compose output: ${stdout}`);
+    sendLog(`Docker Compose output: ${stdout}`);
   });
 
   waitForServer("http://localhost:3000", () => {
-  mainWindow.loadURL("http://localhost:3000");
-});
+    mainWindow.loadURL("http://localhost:3000");
+  });
 })
 
 function waitForServer(url, callback) {
   const interval = setInterval(() => {
-      fetch(url)
-          .then(response => {
-              if (response.ok) {
-                  clearInterval(interval);
-                  callback();
-              }
-          })
-          .catch(() => console.log("Waiting for server to be available..."));
+    fetch(url)
+      .then(response => {
+        if (response.ok) {
+          clearInterval(interval);
+          callback();
+        }
+      })
+      .catch(() => sendLog("Waiting for server to be available..."));
   }, 3000);
 }

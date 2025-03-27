@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World!</title>
+  <link rel="stylesheet" href="loading.css" />
+</head>
+
+<body>
+  <h1>Miyuki</h1>
+  <p>Initializing app</p>
+  <div id="log" style="height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;"></div>
+
+  <script>
+    window.electron.onLogMessage((message) => {
+      const logDiv = document.getElementById('log');
+      logDiv.innerHTML += message + "<br>";
+      logDiv.scrollTop = logDiv.scrollHeight;
+    });
+  </script>
+</body>
+
+</html>
