@@ -38,8 +38,6 @@ app.whenReady().then(() => {
   exec(command, (error, stdout, stderr) => {
     if (error) {
       sendLog(`Error on Docker Compose execution: ${error.message}`);
-      console.log(`Error on Docker Compose execution: ${error.message}`);
-
       return;
     }
     if (stderr) {
