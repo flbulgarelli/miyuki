@@ -1,6 +1,6 @@
 const { app, BrowserWindow } = require('electron');
 const { exec } = require('child_process');
-const path = require('path'); 
+const path = require('path');
 const dotenv = require('dotenv');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -25,13 +25,14 @@ function sendLog(message) {
 
 app.whenReady().then(() => {
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    show: false,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     },
   });
 
+  mainWindow.maximize();
+  mainWindow.show();
   mainWindow.loadFile(path.join(__dirname, 'loading.html'));
 
   exec(command, (error, stdout, stderr) => {
