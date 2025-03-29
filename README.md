@@ -53,4 +53,4 @@ docker run -it --rm \
 
 ## Prebuilt distributions
 
-Go to any of the `dists/` subfolders and follow instructions.
+You'll find different setup configuration for language runners and content under the `dist` directory. Go to any of the `dists/` directories and follow instructions.

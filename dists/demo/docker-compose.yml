@@ -1,0 +1,30 @@
+version: "3"
+services:
+  ## =======
+  ## Runners
+  ## =======
+
+  miyuki-haskell-runner:
+    image: flbulgarelli/miyuki-haskell-runner
+    container_name: miyuki-haskell-runner
+    privileged: true
+    volumes:
+      - /tmp:/tmp
+    command: bundle exec puma -p 3030
+    ports:
+      - 3030:3030
+    depends_on:
+      - miyuki-dind
+
+  ## =======
+  ## Workers
+  ## =======
+
+  miyuki-haskell-worker-setup:
+      image: flbulgarelli/miyuki-haskell-runner
+      container_name: miyuki-haskell-worker-setup
+      restart: "no"
+      privileged: true
+      command: bundle exec ruby pull_worker.rb
+      depends_on:
+        - miyuki-dind
