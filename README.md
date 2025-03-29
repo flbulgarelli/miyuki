@@ -21,14 +21,34 @@ This is a fork of mumuki-laboratory that:
 
 ### Install environment
 
-```
+```bash
 rbenv install
 bundle install
 ```
 
-### Start the server
+## Start runners
 
-This will start miyuki server only - required runners need to be started following by their own.
+> This will start just a single haskell runner, required for the `demo` distribution
+> For more information about distributions, see below.
+
+```bash
+docker compose -f docker/docker-compose.yml \
+               -f dists/demo/docker-compose.yml \
+               up -d miyuki-haskell-worker-setup miyuki-dind miyuki-haskell-runner
+```
+
+## Create database
+
+> This will setup a server using the `demo` distribution.
+> For more information about distributions, see below.
+
+```bash
+rails db:create
+rails db:schema:load
+MIYUKI_DIST=demo rails db:seed --trace
+```
+
+### Start the server
 
 ```bash
 rails s
