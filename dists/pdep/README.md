@@ -8,6 +8,12 @@ PDEP Distribution
 
 ## Start a full running system
 
-```
+```bash
 docker compose -f docker/docker-compose.yml -f dist/pdep/docker-compose.yml  up -d
+```
+
+## Development
+
+```bash
+MIYUKI_DIST=pdep rails db:seed --trace
 ```
