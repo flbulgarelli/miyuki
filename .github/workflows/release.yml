@@ -24,6 +24,8 @@ jobs:
           DIST_NAME="${TAG%%/*}"
           echo "DIST_NAME=$DIST_NAME" >> $GITHUB_ENV
 
+      - run: npm install
+      
       - name: Run make with DIST_NAME
         run: npm run make
         env:
