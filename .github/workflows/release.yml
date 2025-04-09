@@ -53,6 +53,7 @@ jobs:
           node-version-file: './packager/.nvmrc'
 
       - name: Extract DIST_NAME from tag
+        shell: bash
         run: |
           TAG="${{ github.ref_name }}"
           DIST_NAME="${TAG%%/*}"
