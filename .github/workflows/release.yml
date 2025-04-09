@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version-file: '.nvmrc'
+          node-version-file: './packager/.nvmrc'
 
       - name: Extract DIST_NAME from tag
         run: |
@@ -33,5 +33,5 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
-          artifacts: "out/make/deb/x64/**"
+          artifacts: "./packager/out/make/deb/x64/**"
           token: ${{ secrets.GITHUB_TOKEN }}
