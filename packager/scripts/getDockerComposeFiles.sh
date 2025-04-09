@@ -2,11 +2,18 @@ echo "Getting docker-compose files..."
 
 DIR="docker"
 
-# Load environment variables from .env file
-if [ -f .env ]; then
-  export $(cat .env | xargs)
+if [ -z "$DIST_NAME" ]; then
+  echo "DIST_NAME is not set, use DIST_NAME=<dist> npm run make"
+  exit 1
+fi
+
+ENV_PATH="../dists/$DIST_NAME/.env"
+
+if [ -f "$ENV_PATH" ]; then
+  export $(cat "$ENV_PATH" | xargs)
+  echo "$DIST_NAME will be packed"
 else
-  echo ".env file not found"
+  echo ".env file not found for distribution '$DIST_NAME' at $ENV_PATH"
   exit 1
 fi
 

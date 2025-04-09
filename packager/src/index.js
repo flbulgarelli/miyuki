@@ -1,14 +1,11 @@
 const { app, BrowserWindow } = require('electron');
 const { exec } = require('child_process');
 const path = require('path');
-const dotenv = require('dotenv');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
   app.quit();
 }
-
-dotenv.config();
 
 const distName = process.env.DIST_NAME || "pdep";
 const command = `docker-compose -f ${process.resourcesPath}/docker/docker-compose.yml -f ${process.resourcesPath}/docker/docker-compose.${distName}.yml up -d`;
