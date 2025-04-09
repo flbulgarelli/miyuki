@@ -3,7 +3,7 @@
 ## Packaging
 * Make sure you are using the correct node version running `nvm use`
 * Run `npm install`
-* Run `DIST_NAME=<dist> npm run make`, using the name of the distribution you want to pack. 
+* Run `MIYUKI_DIST=<dist> npm run make`, using the name of the distribution you want to pack. 
 * You can find the installers on the `out` folder.
 
 ## Releasing 

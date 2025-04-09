@@ -7,8 +7,8 @@ if (require('electron-squirrel-startup')) {
   app.quit();
 }
 
-const distName = process.env.DIST_NAME || "pdep";
-const command = `docker-compose -f ${process.resourcesPath}/docker/docker-compose.yml -f ${process.resourcesPath}/docker/docker-compose.${distName}.yml up -d`;
+const miyukiDist = process.env.MIYUKI_DIST || "pdep";
+const command = `docker-compose -f ${process.resourcesPath}/docker/docker-compose.yml -f ${process.resourcesPath}/docker/docker-compose.${miyukiDist}.yml up -d`;
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {

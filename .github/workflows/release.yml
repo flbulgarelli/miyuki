@@ -18,18 +18,18 @@ jobs:
         with:
           node-version-file: './packager/.nvmrc'
 
-      - name: Extract DIST_NAME from tag
+      - name: Extract MIYUKI_DIST from tag
         run: |
           TAG="${{ github.ref_name }}"
-          DIST_NAME="${TAG%%/*}"
-          echo "DIST_NAME=$DIST_NAME" >> $GITHUB_ENV
+          MIYUKI_DIST="${TAG%%/*}"
+          echo "MIYUKI_DIST=$MIYUKI_DIST" >> $GITHUB_ENV
 
       - run: npm install
 
-      - name: Run make with DIST_NAME
+      - name: Run make with MIYUKI_DIST
         run: npm run make
         env:
-          DIST_NAME: ${{ env.DIST_NAME }}
+          MIYUKI_DIST: ${{ env.MIYUKI_DIST }}
 
       - name: Crear release
         uses: ncipollo/release-action@v1
@@ -52,19 +52,19 @@ jobs:
         with:
           node-version-file: './packager/.nvmrc'
 
-      - name: Extract DIST_NAME from tag
+      - name: Extract MIYUKI_DIST from tag
         shell: bash
         run: |
           TAG="${{ github.ref_name }}"
-          DIST_NAME="${TAG%%/*}"
-          echo "DIST_NAME=$DIST_NAME" >> $GITHUB_ENV
+          MIYUKI_DIST="${TAG%%/*}"
+          echo "MIYUKI_DIST=$MIYUKI_DIST" >> $GITHUB_ENV
 
       - run: npm install
       
-      - name: Run make with DIST_NAME
+      - name: Run make with MIYUKI_DIST
         run: npm run make
         env:
-          DIST_NAME: ${{ env.DIST_NAME }}
+          MIYUKI_DIST: ${{ env.MIYUKI_DIST }}
 
       - name: Crear release
         uses: ncipollo/release-action@v1

@@ -2,18 +2,18 @@ echo "Getting docker-compose files..."
 
 DIR="docker"
 
-if [ -z "$DIST_NAME" ]; then
-  echo "DIST_NAME is not set, use DIST_NAME=<dist> npm run make"
+if [ -z "$MIYUKI_DIST" ]; then
+  echo "MIYUKI_DIST is not set, use MIYUKI_DIST=<dist> npm run make"
   exit 1
 fi
 
-ENV_PATH="../dists/$DIST_NAME/.env"
+ENV_PATH="../dists/$MIYUKI_DIST/.env"
 
 if [ -f "$ENV_PATH" ]; then
   export $(cat "$ENV_PATH" | xargs)
-  echo "$DIST_NAME will be packed"
+  echo "$MIYUKI_DIST will be packed"
 else
-  echo ".env file not found for distribution '$DIST_NAME' at $ENV_PATH"
+  echo ".env file not found for distribution '$MIYUKI_DIST' at $ENV_PATH"
   exit 1
 fi
 
@@ -23,7 +23,7 @@ fi
 
 cp ../docker/docker-compose.yml "$DIR" || { echo "Failed to copy docker-compose.yml"; exit 1; }
 
-cp ../dists/$DIST_NAME/docker-compose.yml "$DIR/docker-compose.$DIST_NAME.yml" || { echo "Failed to copy docker-compose.$DIST_NAME.yml"; exit 1; }
+cp ../dists/$MIYUKI_DIST/docker-compose.yml "$DIR/docker-compose.$MIYUKI_DIST.yml" || { echo "Failed to copy docker-compose.$MIYUKI_DIST.yml"; exit 1; }
 
 echo "Getting database..."
 
