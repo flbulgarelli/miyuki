@@ -1,0 +1,37 @@
+name: Packager Release
+on:
+  push:
+    tags:
+      - '**/*'
+jobs:
+  pack-linux:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./packager
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Extract DIST_NAME from tag
+        run: |
+          TAG="${{ github.ref_name }}"
+          DIST_NAME="${TAG%%/*}"
+          echo "DIST_NAME=$DIST_NAME" >> $GITHUB_ENV
+
+      - name: Run make with DIST_NAME
+        run: npm run make
+        env:
+          DIST_NAME: ${{ env.DIST_NAME }}
+
+      - name: Crear release
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          artifacts: "out/make/deb/x64/**"
+          token: ${{ secrets.GITHUB_TOKEN }}
