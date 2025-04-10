@@ -10,7 +10,7 @@ fi
 ENV_PATH="../dists/$MIYUKI_DIST/.env"
 
 if [ -f "$ENV_PATH" ]; then
-  export $(cat "$ENV_PATH" | xargs)
+  export $(cat "$ENV_PATH" | tr -d '\r' | xargs)
   echo "$MIYUKI_DIST will be packed"
 else
   echo ".env file not found for distribution '$MIYUKI_DIST' at $ENV_PATH"
