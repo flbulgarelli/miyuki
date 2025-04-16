@@ -29,6 +29,8 @@ COPY db/ /var/www/miyuki/db/
 ENV RAILS_LOG_TO_STDOUT=true
 ENV RAILS_SERVE_STATIC_FILES=true
 
+RUN cp -r $(bundle show mumuki-styles)/app/assets/fonts/* /var/www/miyuki/public/assets
+
 CMD ["rails", "s"]
 
 EXPOSE 3000
