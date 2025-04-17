@@ -11,6 +11,7 @@
 /db/*.sqlite3
 /db/*.sqlite3-*
 /db/seeds.rb
+**/*.sqlite3
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -36,3 +37,4 @@
 /config/master.key
 
 nuntius.log
+
