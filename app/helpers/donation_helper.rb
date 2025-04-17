@@ -4,7 +4,7 @@ module DonationHelper
     <p>
       <i class="da da-mumuki"></i> ¿Estás aprendiendo con Mumuki?
       <br>
-      ☕ ¡Convidanos <a href="https://cafecito.app/MumukiOrg">un cafecito</a> para poder seguir desarrollando la plataforma!
+      ⭐ Danos <a href="https://github.com/flbulgarelli/miyuki">una estrella en Github</a>
     </p>
     HTML
   end
