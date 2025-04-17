@@ -9,5 +9,5 @@ PDEP Distribution
 ## Start a full running system
 
 ```
-docker compose -f docker/docker-compose.yml -f dists/pdep/docker-compose.yml  up -d
+docker compose -f dists/pdep/docker-compose.yml -f docker/docker-compose.yml up -d
 ```
