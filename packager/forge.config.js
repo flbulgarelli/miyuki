@@ -5,21 +5,21 @@ module.exports = {
     asar: false,
     extraResource: ['docker/'],
     executableName: "Miyuki",
-    icon: path.resolve(__dirname, 'src/favicon')
+    icon: path.resolve(__dirname, 'src/icons/favicon')
   },
   rebuildConfig: {},
   makers: [
     {
       name: '@electron-forge/maker-squirrel', 
       config: {
-        iconUrl: 'file://' + path.resolve(__dirname, 'src/favicon.ico'),
-        setupIcon: path.resolve(__dirname, 'src/favicon.ico'),
+        iconUrl: 'file://' + path.resolve(__dirname, 'src/icons/favicon.ico'),
+        setupIcon: path.resolve(__dirname, 'src/icons/favicon.ico'),
       },
     },
     {
       name: '@electron-forge/maker-deb',
       config: {
-        icon: path.resolve(__dirname, 'src/favicon.png')
+        icon: path.resolve(__dirname, 'src/icons/favicon.png')
       },
     },
   ],

@@ -1,5 +1,6 @@
-const { app, BrowserWindow } = require('electron');
+const { app, Menu, BrowserWindow } = require('electron');
 const { exec } = require('child_process');
+const menuTemplate = require('./menu');
 const path = require('path');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -28,6 +29,8 @@ app.whenReady().then(() => {
     },
   });
 
+  const menu = Menu.buildFromTemplate(menuTemplate);
+  Menu.setApplicationMenu(menu);
   mainWindow.maximize();
   mainWindow.show();
   mainWindow.loadFile(path.join(__dirname, 'loading.html'));
