@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Miyuki</title>
+  <link rel="stylesheet" href="license.css" />
+</head>
+
+<body>
+    <div class="license-container">
+        <h1>Licencia</h1>
+        <pre id="license-text"></pre>
+        <div class="button-container">
+            <button id="accept">Aceptar</button>
+            <button id="reject">Rechazar</button>
+        </div>
+    </div>
+    <script>
+        const { ipcRenderer } = require('electron');
+        
+        fetch('LICENSE.txt')
+            .then(response => response.text())
+            .then(text => {
+                document.getElementById('license-text').textContent = text;
+            });
+
+        document.getElementById('accept').addEventListener('click', () => {
+            ipcRenderer.send('license-response', true);
+        });
+
+        document.getElementById('reject').addEventListener('click', () => {
+            ipcRenderer.send('license-response', false);
+        });
+    </script>
+</body>
+</html> 

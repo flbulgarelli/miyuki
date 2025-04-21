@@ -1,7 +1,8 @@
-const { app, Menu, BrowserWindow } = require('electron');
+const { app, Menu, BrowserWindow, ipcMain } = require('electron');
 const { exec } = require('child_process');
 const menuTemplate = require('./menu');
 const path = require('path');
+const fs = require('fs');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -11,29 +12,26 @@ if (require('electron-squirrel-startup')) {
 const miyukiDist = process.env.MIYUKI_DIST || "pdep";
 const command = `docker-compose -f ${process.resourcesPath}/docker/docker-compose.yml -f ${process.resourcesPath}/docker/docker-compose.${miyukiDist}.yml up -d`;
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
-});
+let mainWindow;
 
-function sendLog(message) {
-  mainWindow.webContents.send('log-message', message);
+function hasAcceptedLicense() {
+  const userDataPath = app.getPath('userData');
+  const licensePath = path.join(userDataPath, 'license-accepted');
+  return fs.existsSync(licensePath);
 }
 
-app.whenReady().then(() => {
-  mainWindow = new BrowserWindow({
-    show: false,
-    webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
-    },
-  });
+function saveLicenseAcceptance() {
+  const userDataPath = app.getPath('userData');
+  const licensePath = path.join(userDataPath, 'license-accepted');
+  fs.writeFileSync(licensePath, 'accepted');
+}
 
-  const menu = Menu.buildFromTemplate(menuTemplate);
-  Menu.setApplicationMenu(menu);
-  mainWindow.maximize();
-  mainWindow.show();
-  mainWindow.loadFile(path.join(__dirname, 'loading.html'));
+function showLicenseWindow() {
+  mainWindow.loadFile(path.join(__dirname, 'license/license.html'));
+}
+
+function startMainApp() {
+  mainWindow.loadFile(path.join(__dirname, 'loading/loading.html'));
 
   exec(command, (error, stdout, stderr) => {
     if (error) {
@@ -50,7 +48,49 @@ app.whenReady().then(() => {
   waitForServer("http://localhost:3000", () => {
     mainWindow.loadURL("http://localhost:3000");
   });
-})
+}
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
+});
+
+function sendLog(message) {
+  mainWindow.webContents.send('log-message', message);
+}
+
+app.whenReady().then(() => {
+  mainWindow = new BrowserWindow({
+    show: false,
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
+      preload: path.join(__dirname, 'preload.js')
+    },
+  });
+
+  const menu = Menu.buildFromTemplate(menuTemplate);
+  Menu.setApplicationMenu(menu);
+  mainWindow.maximize();
+  mainWindow.show();
+
+  if (hasAcceptedLicense()) {
+    showLicenseWindow();
+
+  } else {
+    showLicenseWindow();
+  }
+});
+
+ipcMain.on('license-response', (event, accepted) => {
+  if (accepted) {
+    saveLicenseAcceptance();
+    startMainApp();
+  } else {
+    app.quit();
+  }
+});
 
 function waitForServer(url, callback) {
   const interval = setInterval(() => {
