@@ -4,9 +4,9 @@ es:
   abort_explanation_html: <li>Revisá que tu programa no tenga recursión o algún bucle infinito</li><li>Revisá que tengas conexión a internet</li><li>Esperá un rato e intentalo nuevamente</li>
   about: Detalles
   about_miyuki:
-    <p>👋 ¡Hola! ¿Sabías que <a href="https://github.com/flbulgarelli/miyuki"><i class="fa fa-solid fa-snowflake"></i> Miyuki</a> es un proyecto colaborativo y de código abierto? Gracias a Miyuki podés instalar y ejecutar un laboratorio de <a href="https://github.com/mumuki/mumuki-laboratory"><i class="da da-mumuki"></i> Mumuki</a> en tu computadora.</p>
+    <p>👋 ¡Hola! ¿Sabías que <a target="_blank" href="https://github.com/flbulgarelli/miyuki"><i class="fa fa-solid fa-snowflake"></i> Miyuki</a> es un proyecto colaborativo y de código abierto? Gracias a Miyuki podés instalar y ejecutar un laboratorio de <a target="_blank" href="https://github.com/mumuki/mumuki-laboratory"><i class="da da-mumuki"></i> Mumuki</a> en tu computadora.</p>
     <p>🌟 Si estás aprendiendo con este software, te pedimos que le des una estrella a estos proyectos y sigas sus novedades.</p>
-    <p>💬 También te esperamos en el canal de <a href="https://discord.gg/Ak4ee7fcSM">Discord de Miyuki</a>.</p>
+    <p>💬 También te esperamos en el canal de <a target="_blank" href="https://discord.gg/Ak4ee7fcSM">Discord de Miyuki</a>.</p>
   accept: Aceptar
   accept_terms: He leido y acepto los términos y condiciones
   accept_terms_to_continue: Para continuar es necesario aceptar los términos y condiciones
