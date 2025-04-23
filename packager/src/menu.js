@@ -8,13 +8,16 @@ const menuTemplate = [
             {
                 label: 'Sobre Miyuki',
                 click: () => {
-                    dialog.showMessageBox({type: "info", title: "Sobre Miyuki", message: "TODO"})
+                    dialog.showMessageBox({type: "info", title: "Sobre Miyuki", message: `
+                        Miyuki es un proyecto colaborativo y de código abierto para que puedas instalar una versión
+                        minimalista del laboratorio de Mumuki en tu computadora.
+                    `})
                 }
             },
             {
                 label: 'Licencia',
                 click: () => {
-                    
+                    shell.openExternal('https://github.com/flbulgarelli/miyuki/blob/main/LICENSE');
                 }
             },
             {
