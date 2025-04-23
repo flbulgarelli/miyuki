@@ -1,5 +1,5 @@
-module DonationHelper
-  def donate_html
+module AboutUsHelper
+  def about_us_html
     <<~HTML.html_safe
     <section class="exercise-assignment">
       <blockquote>
