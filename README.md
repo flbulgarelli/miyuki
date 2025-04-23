@@ -16,6 +16,7 @@ This is a fork of mumuki-laboratory that:
   * Makes incognito mode work - current implementation had a lot of bugs and missing parts
   * Uses `Sqlite3` instead of `PostgreSQL`
   * Makes deployment easier
+  * [Provides a desktop installer](./packager/README.md)
 
 ## Local installation
 
