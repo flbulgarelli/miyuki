@@ -1,4 +1,4 @@
-const { app, Menu, BrowserWindow, ipcMain } = require('electron');
+const { app, Menu, BrowserWindow, ipcMain, shell} = require('electron');
 const { exec } = require('child_process');
 const menuTemplate = require('./menu');
 const { hasAcceptedLicense, saveLicenseAcceptance, showLicenseWindow } = require('./license');
@@ -10,7 +10,7 @@ if (require('electron-squirrel-startup')) {
 }
 
 const miyukiDist = process.env.MIYUKI_DIST || "pdep";
-const command = `docker-compose -f ${process.resourcesPath}/docker/docker-compose.yml -f ${process.resourcesPath}/docker/docker-compose.${miyukiDist}.yml up -d`;
+const command = `docker compose -f ${process.resourcesPath}/docker/docker-compose.yml -f ${process.resourcesPath}/docker/docker-compose.${miyukiDist}.yml up -d`;
 
 let mainWindow;
 
@@ -53,6 +53,11 @@ app.on('window-all-closed', () => {
 
 function startMiyuki() {
   mainWindow.loadFile(path.join(__dirname, 'loading/loading.html'));
+
+  mainWindow.webContents.setWindowOpenHandler((details) => {
+    shell.openExternal(details.url);
+    return { action: "deny" };
+  })
 
   exec(command, (error, stdout, stderr) => {
     if (error) {
