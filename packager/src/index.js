@@ -1,8 +1,8 @@
 const { app, Menu, BrowserWindow, ipcMain } = require('electron');
 const { exec } = require('child_process');
 const menuTemplate = require('./menu');
+const { hasAcceptedLicense, saveLicenseAcceptance, showLicenseWindow } = require('./license');
 const path = require('path');
-const fs = require('fs');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -14,23 +14,44 @@ const command = `docker-compose -f ${process.resourcesPath}/docker/docker-compos
 
 let mainWindow;
 
-function hasAcceptedLicense() {
-  const userDataPath = app.getPath('userData');
-  const licensePath = path.join(userDataPath, 'license-accepted');
-  return fs.existsSync(licensePath);
-}
+app.whenReady().then(() => {
+  mainWindow = new BrowserWindow({
+    show: false,
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
+      preload: path.join(__dirname, 'preload.js')
+    },
+  });
 
-function saveLicenseAcceptance() {
-  const userDataPath = app.getPath('userData');
-  const licensePath = path.join(userDataPath, 'license-accepted');
-  fs.writeFileSync(licensePath, 'accepted');
-}
+  const menu = Menu.buildFromTemplate(menuTemplate);
+  Menu.setApplicationMenu(menu);
+  mainWindow.maximize();
+  mainWindow.show();
 
-function showLicenseWindow() {
-  mainWindow.loadFile(path.join(__dirname, 'license/license.html'));
-}
+  if (hasAcceptedLicense()) {
+    showLicenseWindow(mainWindow);
+  } else {
+    showLicenseWindow(mainWindow);
+  }
+});
 
-function startMainApp() {
+ipcMain.on('license-response', (event, accepted) => {
+  if (accepted) {
+    saveLicenseAcceptance();
+    startMiyuki();
+  } else {
+    app.quit();
+  }
+});
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
+});
+
+function startMiyuki() {
   mainWindow.loadFile(path.join(__dirname, 'loading/loading.html'));
 
   exec(command, (error, stdout, stderr) => {
@@ -50,47 +71,9 @@ function startMainApp() {
   });
 }
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
-});
-
 function sendLog(message) {
   mainWindow.webContents.send('log-message', message);
 }
-
-app.whenReady().then(() => {
-  mainWindow = new BrowserWindow({
-    show: false,
-    webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false,
-      preload: path.join(__dirname, 'preload.js')
-    },
-  });
-
-  const menu = Menu.buildFromTemplate(menuTemplate);
-  Menu.setApplicationMenu(menu);
-  mainWindow.maximize();
-  mainWindow.show();
-
-  if (hasAcceptedLicense()) {
-    showLicenseWindow();
-
-  } else {
-    showLicenseWindow();
-  }
-});
-
-ipcMain.on('license-response', (event, accepted) => {
-  if (accepted) {
-    saveLicenseAcceptance();
-    startMainApp();
-  } else {
-    app.quit();
-  }
-});
 
 function waitForServer(url, callback) {
   const interval = setInterval(() => {
