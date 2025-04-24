@@ -15,6 +15,7 @@ dist-ssr
 *.local
 out
 .env
+**/LICENSE
 
 # Editor directories and files
 .vscode/*

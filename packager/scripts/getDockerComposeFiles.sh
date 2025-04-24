@@ -25,6 +25,10 @@ cp ../docker/docker-compose.yml "$DIR" || { echo "Failed to copy docker-compose.
 
 cp ../dists/$MIYUKI_DIST/docker-compose.yml "$DIR/docker-compose.$MIYUKI_DIST.yml" || { echo "Failed to copy docker-compose.$MIYUKI_DIST.yml"; exit 1; }
 
+echo "Getting LICENSE..."
+
+cp ../LICENSE ./src/license/LICENSE
+
 echo "Getting database..."
 
 DB_DIR="$DIR/development.sqlite3"

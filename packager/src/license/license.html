@@ -19,7 +19,7 @@
     <script>
         const { ipcRenderer } = require('electron');
         
-        fetch('LICENSE.txt')
+        fetch('LICENSE')
             .then(response => response.text())
             .then(text => {
                 document.getElementById('license-text').textContent = text;
