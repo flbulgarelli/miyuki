@@ -39,11 +39,6 @@ app.whenReady().then(() => {
     return { action: "deny" };
   })
 
-  mainWindow.webContents.setWindowOpenHandler((details) => {
-    shell.openExternal(details.url);
-    return { action: "deny" };
-  })
-
   const dockerProcess = spawn("docker", [
     'compose',
     '-f', path.join(process.resourcesPath, 'docker', 'docker-compose.yml'),
@@ -52,7 +47,6 @@ app.whenReady().then(() => {
     '-d'
   ])
 
-  // Por algun motivo docker usa el stderr unicamente (?
   dockerProcess.stdout.on('data', (data) => {
     sendLog(`[INFO] ${data.toString()}`);
   });
