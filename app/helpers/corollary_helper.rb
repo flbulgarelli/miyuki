@@ -4,7 +4,7 @@ module CorollaryHelper
       %Q{
         <div class="#{last_box_class trailing_boxes}">
           <p>#{with_corollary.corollary_html}</p>
-          <p>#{donate_html}<p>
+          <p>#{about_us_html}<p>
         </div>
       }.html_safe
     end

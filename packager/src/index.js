@@ -1,4 +1,4 @@
-const { app, Menu, BrowserWindow } = require('electron');
+const { app, shell, Menu, BrowserWindow } = require('electron');
 const { spawn } = require('child_process');
 const menuTemplate = require('./menu');
 const path = require('path');
@@ -33,6 +33,16 @@ app.whenReady().then(() => {
   mainWindow.maximize();
   mainWindow.show();
   mainWindow.loadFile(path.join(__dirname, 'loading.html'));
+
+  mainWindow.webContents.setWindowOpenHandler((details) => {
+    shell.openExternal(details.url);
+    return { action: "deny" };
+  })
+
+  mainWindow.webContents.setWindowOpenHandler((details) => {
+    shell.openExternal(details.url);
+    return { action: "deny" };
+  })
 
   const dockerProcess = spawn("docker", [
     'compose',
