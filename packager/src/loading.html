@@ -15,7 +15,7 @@
   <script>
     window.electron.onLogMessage((message) => {
       const logDiv = document.getElementById('log');
-      logDiv.innerHTML += message + "<br>";
+      logDiv.innerHTML += message;
       logDiv.scrollTop = logDiv.scrollHeight;
     });
   </script>

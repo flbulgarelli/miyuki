@@ -59,6 +59,7 @@ app.whenReady().then(() => {
     if (code === 0) {
       sendLog(`[SUCCESS]: Containers iniciados correctamente.`);
       waitForServer("http://localhost:3000", () => {
+        sendLog("Aplicación lista, cargando...");
         mainWindow.loadURL("http://localhost:3000");
       });
     } else {
