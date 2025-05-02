@@ -18,6 +18,16 @@ This is a fork of mumuki-laboratory that:
   * Makes deployment easier
   * [Provides a desktop installer](./packager/README.md)
 
+
+## Principles
+
+This project is both [open source](https://opensource.org/osd) and also [ethical software](https://ethicalsource.dev/what-we-believe/).
+
+In order to better express and enforce this, we have:
+
+ * written and published our ethical principles. Please read them [here](./PRINCIPLES).
+ * tailored an AGPL-inspired license that enforces that such principles are linked to it, read by users and  distributed alongside verbatim and modified copies of this software. It also offers mechanisms for new forks to extending this mechanism. Please read it [here](./LICENSE)
+
 ## Local installation
 
 ### Install environment
