@@ -30,7 +30,7 @@ app.whenReady().then(() => {
   mainWindow.show();
 
   if (hasAcceptedLicense()) {
-    showLicenseWindow(mainWindow);
+    startMiyuki();
   } else {
     showLicenseWindow(mainWindow);
   }
