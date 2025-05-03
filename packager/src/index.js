@@ -82,6 +82,6 @@ function waitForServer(url, callback) {
           callback();
         }
       })
-      .catch(() => sendLog("Waiting for server to be available..."));
+      .catch(() => sendLog("Esperando a que el servidor esté disponible."));
   }, 3000);
 }
