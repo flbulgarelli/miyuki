@@ -23,10 +23,16 @@ This is a fork of mumuki-laboratory that:
 
 This project is both [open source](https://opensource.org/osd) and also [ethical software](https://ethicalsource.dev/what-we-believe/).
 
+We believe that the context in which open source projects are created matters. It is important to give a voice to the software creators and ensure this voice is not silenced. In other words, giving attribution to the authors is not enough - in order to credit them, we need to also tell who them are.
+
+Likewise, we think that users have the right to know about that context, and the goals of the project creators, in order to better decide if they are willing to use the software or not. This is an essential aspect of being accountable and give transparency to the overall software development process.
+
 In order to better express and enforce this, we have:
 
- * written and published our ethical principles. Please read them [here](./PRINCIPLES).
- * tailored an AGPL-inspired license that enforces that such principles are linked to it, read by users and  distributed alongside verbatim and modified copies of this software. It also offers mechanisms for new forks to extending this mechanism. Please read it [here](./LICENSE)
+ * written and published our ethical principles, which describe the context and ethical viewpoints of the authors. Please read them [here](./PRINCIPLES).
+ * tailored an AGPL-V3-inspired license (called _AGPL V3 LICENSE WITH ETHICAL PRINCIPLES NOTICE_) that enforces that such principles are linked to it, available to users and
+  distributed alongside verbatim and modified copies of this software. It also offers mechanisms for new forks to extending this mechanism. Please read it [here](./LICENSE).
+
 
 ## Local installation
 
