@@ -35,8 +35,26 @@ button {
 
 pre {
     height: 60vh;
-    overflow-y: auto; 
+    overflow-y: auto;
     border: 1px solid #ccc;
     padding: 10px;
     white-space: pre-wrap;
+}
+
+.checkboxes {
+    margin-top: 1em;
+}
+
+.checkboxes label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.button-container {
+    margin-top: 1em;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
