@@ -5,22 +5,24 @@ module.exports = {
     asar: false,
     extraResource: ['docker/'],
     executableName: "Miyuki",
-    icon: path.resolve(__dirname, 'src/icons/favicon')
+    icon: path.resolve(__dirname, 'src/assets/favicon')
   },
   rebuildConfig: {},
   makers: [
     {
-      name: '@electron-forge/maker-squirrel', 
+      name: '@electron-forge/maker-squirrel',
       config: {
-        iconUrl: 'file://' + path.resolve(__dirname, 'src/icons/favicon.ico'),
-        setupIcon: path.resolve(__dirname, 'src/icons/favicon.ico'),
+        iconUrl: 'file://' + path.resolve(__dirname, 'src/assets/favicon.ico'),
+        setupIcon: path.resolve(__dirname, 'src/assets/favicon.ico'),
         setupExe: 'MiyukiInstaller.exe',
       },
     },
     {
       name: '@electron-forge/maker-deb',
       config: {
-        icon: path.resolve(__dirname, 'src/icons/favicon.png')
+        icon: path.resolve(__dirname, 'src/assets/favicon.png'),
+        bin: 'Miyuki',
+        executableName: 'Miyuki'
       },
     },
   ],
