@@ -12,6 +12,6 @@
     "releaseName": "${distName} v${version}"
   },
   "hooks": {
-    "before:init": "echo Iniciando workflow de release para distribucion: ${distName}"
+    "before:init": "echo \"Iniciando workflow de release para distribucion: ${distName}\""
   }
 }
