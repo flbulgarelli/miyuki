@@ -25,13 +25,11 @@ app.whenReady().then(() => {
   mainWindow.maximize();
   mainWindow.show();
 
-  startMiyuki();
-
-/*   if (hasAcceptedLicense()) {
+  if (hasAcceptedLicense()) {
     startMiyuki();
   } else {
     showLicenseWindow(mainWindow);
-  } */
+  }
 });
 
 app.on('window-all-closed', () => {
@@ -41,7 +39,7 @@ app.on('window-all-closed', () => {
 });
 
 export const startMiyuki = (): void => {
- // mainWindow.loadFile(join(__dirname, 'loading/loading.html'));
+  mainWindow.loadURL(`${mainURL()}#/loading`)
 
   mainWindow.webContents.setWindowOpenHandler((details) => {
     shell.openExternal(details.url);
@@ -81,3 +79,5 @@ const waitForServer = (url: string, callback: () => void): void => {
       .catch(() => sendLog("Waiting for server to be available..."));
   }, 3000);
 }
+
+export const mainURL = () => app.isPackaged ? `file://${join(__dirname, "../dist/index.html")}` : "http://localhost:5173/"

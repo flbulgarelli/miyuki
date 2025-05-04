@@ -1,6 +1,7 @@
 import { BrowserWindow, app } from "electron";
 import { writeFileSync, existsSync } from 'fs';
 import { join } from 'path';
+import { mainURL } from "./main";
 
 const userDataPath = app.getPath('userData');
 const licensePath = join(userDataPath, 'license-accepted');
@@ -12,5 +13,5 @@ export const saveLicenseAcceptance = (): void => {
 }
 
 export const showLicenseWindow = (mainWindow: BrowserWindow): void => {
-    mainWindow.loadFile(join(__dirname, 'license/license.html'));
+    mainWindow.loadURL(`${mainURL()}#/principles-and-license`)
 }
