@@ -1,0 +1,12 @@
+{
+  "npm": {
+    "publish": false
+  },
+  "git": {
+    "tagName": "${distName}/v${version}"
+  },
+  "github": {
+    "release": true,
+    "releaseName": "${distName} v${version}"
+  }
+}

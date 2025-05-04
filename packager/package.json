@@ -12,7 +12,8 @@
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "publish": "electron-forge publish"
+    "publish": "electron-forge publish",
+    "release": "release-it --${npm_package_config_release_it_increment} --distName=\"$npm_config_distName\""
   },
   "keywords": [],
   "dependencies": {
