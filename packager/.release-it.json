@@ -1,0 +1,17 @@
+{
+  "npm": {
+    "publish": false
+  },
+  "git": {
+    "tagName": "${distName}/v${version}"
+  },
+  "github": {
+    "release": true,
+    "web": true,
+    "autoGenerate": true,
+    "releaseName": "${distName} v${version}"
+  },
+  "hooks": {
+    "before:init": "echo \"Iniciando workflow de release para distribucion: ${distName}\""
+  }
+}

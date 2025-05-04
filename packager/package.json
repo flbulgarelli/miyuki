@@ -1,7 +1,7 @@
 {
   "name": "Miyuki",
   "productName": "Miyuki",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "Stateless, minimalistic mumuki laboratory",
   "main": "src/index.js",
   "author": {
@@ -12,7 +12,8 @@
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "publish": "electron-forge publish"
+    "publish": "electron-forge publish",
+    "release": "release-it --distName=$npm_config_distname"
   },
   "keywords": [],
   "dependencies": {
