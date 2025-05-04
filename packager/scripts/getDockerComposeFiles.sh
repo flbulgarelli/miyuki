@@ -27,7 +27,7 @@ cp ../dists/$MIYUKI_DIST/docker-compose.yml "$DIR/docker-compose.$MIYUKI_DIST.ym
 
 echo "Getting LICENSE..."
 
-cp ../OBJECTIVES_AND_PRINCIPLES ./src/license/OBJECTIVES_AND_PRINCIPLES
+cp ../PRINCIPLES ./src/license/PRINCIPLES
 
 echo "Getting database..."
 
