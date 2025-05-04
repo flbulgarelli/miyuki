@@ -1,7 +1,50 @@
-El objetivo del proyecto Miyuki es brindar herramientas para el aprendizaje de la programación.
-Miyuki es un proyecto de software creado por una comunidad diversa que incluye muchos docentes de Argentina.
-Esta aplicación contiene código y contenidos desarrollados por personas bajo licencias libres o Creative Commons.
-El software que construimos y utilizamos no es neutral. Todo código es político o tiene implicancias y contextos políticos, históricos y culturales.
-Existen sistemas de opresión. En particular y no exhaustivamente: el mundo está atravesado por relaciones de poder que afectan de forma dañina a personas de ciertas razas, géneros, orientaciones sexuales, condiciones sociales, discapacidades y nacionalidades. Cada vez que nuestro código no desafía a los sistemas de opresión, los estamos aceptando y perpetuando.
-Creemos que el software es un vehículo para expresar, reproducir y reforzar visiones políticas.
-El equipo de Miyuki sueña que quienes usan la aplicación, como personas que van a construir software, no ignoren la capacidad transformadora de su producción para alcanzar un mundo más justo.
+NUESTROS PRINCIPIOS
+
+Miyuki es un proyecto de software creado por una comunidad diversa de docentes
+de Argentina, conformada en el seno de la universidad pública. Nuestro objetivo
+es brindar una herramienta para el aprendizaje de la programación, utilizando
+contenidos libres y sin la necesidad de contar con acceso a Internet.
+
+Para ello, hemos utilizado, en gran medida, los componentes de software abierto
+y libre de la plataforma Mumuki (https://github.com/mumuki/) y sus contenidos
+Creative Commons (https://github.com/mumukiproject/), a los que hemos sumado
+herramientas para simplificar su instalación y minimizar su dependencia en la
+arquitectura cliente-servidor.
+
+Estos objetivos, si bien son ante todo pragmáticos (reducción de costos de
+mantenimiento de servidores, posibilitar el uso aún con conexiones a Internet de
+baja calidad o sin ella) y obedecen a problemáticas reales y cotidianas, tienen
+también raíces que van más allá.
+
+Creemos que el software que construimos y utilizamos no es neutral [1], sino que por
+el contrario, toda línea de código es política: se crea en un contexto social,
+histórico y cultural. Todo lo que programamos está condicionado por este
+contexto, pero también tiene la potencialidad de transformarlo. Por acción u
+omisión, el software será siempre un vehículo para expresar, reproducir,
+reforzar y desafiar visiones políticas.
+
+En este marco, quienes desarrollamos Miyuki reconocemos la existencia de
+sistemas de opresión. En particular y no exhaustivamente: el mundo está
+atravesado por relaciones de poder que afectan de forma dañina a personas de
+ciertas razas, géneros, orientaciones sexuales, condiciones sociales,
+discapacidades y nacionalidades. Cada vez que nuestro código no desafía a los
+sistemas de opresión [2], los estamos aceptando y perpetuando.
+
+Por estos motivos, desde el equipo de Miyuki queremos declarar:
+
+ * nuestro compromiso con observar constantemente estas injusticias y con
+   incluir como parte esencial de su proceso de desarrollo el análisis crítico
+   del impacto de sus producciones en tales sistemas de opresión.
+ * nuestro sueño de que, quienes usan la aplicación, en tanto personas que
+   aprenderán a programar y construirán  software, persigan una formación
+   humanística e integral que vaya más allá de cuestiones tecnológicas y que no
+   ignoren la capacidad transformadora de su producción para alcanzar un mundo
+   más justo [3].
+
+Referencias
+
+[1] https://safiyaunoble.com/wp-content/uploads/2020/09/Algorithms_Oppression_Introduction_Intro.pdf
+[2] https://data-feminism.mitpress.mit.edu/pub/o6w62eho/release/1
+[3] https://www.acm.org/code-of-ethics/software-engineering-code
+[*] https://sur.conectas.org/wp-content/uploads/2018/07/sur-27-portugues-renata-avila-pinto.pdf
+[*] https://ri.conicet.gov.ar/handle/11336/88838
