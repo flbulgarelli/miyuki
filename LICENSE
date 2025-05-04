@@ -1,6 +1,6 @@
               AGPL V3 LICENSE WITH ETHICAL PRINCIPLES NOTICE
-                       Version 1, 1 May 2025,
-                       Buenos Aires, Argentina
+                       Version 1, 1 May 2025
+                      Buenos Aires, Argentina
 
 Copyright (C) 2025 Diana López Alvas, Franco Bulgarelli, Alfredo Sanzo
 Everyone is permitted to copy and distribute verbatim copies of this license
@@ -14,28 +14,43 @@ following additional notice appended to support ethical transparency:
 
 ETHICAL PRINCIPLES NOTICE CLAUSE
 
+1. PRINCIPLES FILE
+
 This software is distributed with a file named PRINCIPLES, which contains
-ethical guidelines and goals written by the original authors. These principles
-reflect the values the software adheres to. They are not legally binding, but
-are provided for users, maintainers, and modifiers for reflection and
-transparency.
+ethical guidelines and goals that drive its development process, written
+by the original authors.
+
+2. NOT LEGALLY BINDING
+
+These principles reflect the values the software adheres to. They are not
+legally binding, but are provided to users, maintainers, and modifiers for
+reflection and transparency.
+
+Users are not required to agree with these principles. Users are also not
+required - but are strongly encouraged - to read them before using the software.
+
+3. DISPLAY
+
+Users have the right to know the principles that guide the development of the
+software. Conversely, authors have the right to be heard.
+
+In order to ensure these rights, user-facing parts of the software should
+provide a way to display the content of the PRINCIPLES file such as during
+installation, in the license agreement, or within "About" sections or "Help"
+menus.
+
+4. DISTRIBUTION
 
 Verbatim copies of the software must include the original PRINCIPLES file,
 unmodified, as part of the distribution.
 
-Modified versions of the software may append their own ethical principles to
-the end of the PRINCIPLES file, provided that:
+Modified versions of the software may append their own ethical principles to the
+end of the PRINCIPLES file, provided that:
 
-1. The original content remains intact and clearly attributed to the original
-   authors.
-2. Any added content is clearly marked as belonging to the modified version,
-   with the name of the modifier and the date of addition.
-
-Users are not required - but are strongly encouraged - to read the PRINCIPLES file
-before using the software. Similarly, user-facing parts of the software are
-encouraged to provide a way to display the content of the PRINCIPLES file as
-part of the installation process, license agreement, about section, or help
-menus.
+  a) The original content remains intact and clearly attributed to the original
+     authors.
+  b) Any added content is clearly marked as belonging to the modified version,
+     with the name of the modifier and the date of addition.
 
 ---
 
