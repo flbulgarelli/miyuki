@@ -1,9 +1,10 @@
-import { app, BrowserWindow, ipcMain, Menu, shell } from "electron";
+import { app, BrowserWindow, Menu, shell } from "electron";
 import { join } from "path";
 import "./api";
 import { exec } from "child_process";
 import { menuTemplate } from "./menu";
 import { hasAcceptedLicense, showLicenseWindow } from "./license";
+import { mainURL, sendLog, waitForServer } from "./utils";
 
 const miyukiDist = process.env.MIYUKI_DIST || "pdep";
 const command = `docker compose -f ${process.resourcesPath}/docker/docker-compose.yml -f ${process.resourcesPath}/docker/docker-compose.${miyukiDist}.yml up -d`;
@@ -48,36 +49,19 @@ export const startMiyuki = (): void => {
 
   exec(command, (error, stdout, stderr) => {
     if (error) {
-      sendLog(`Error on Docker Compose execution: ${error.message}`);
+      sendLog(`Error on Docker Compose execution: ${error.message}`, mainWindow);
       return;
     }
     if (stderr) {
-      sendLog(`Error on output: ${stderr}`);
+      sendLog(`Error on output: ${stderr}`, mainWindow);
       return;
     }
-    sendLog(`Docker Compose output: ${stdout}`);
+    sendLog(`Docker Compose output: ${stdout}`, mainWindow);
   });
 
-  waitForServer("http://localhost:3000", () => {
+  waitForServer("http://localhost:3000", mainWindow, () => {
     mainWindow.loadURL("http://localhost:3000");
   });
 }
 
-const sendLog = (message: string): void => {
-  mainWindow.webContents.send('log-message', message);
-}
 
-const waitForServer = (url: string, callback: () => void): void => {
-  const interval = setInterval(() => {
-    fetch(url)
-      .then(response => {
-        if (response.ok) {
-          clearInterval(interval);
-          callback();
-        }
-      })
-      .catch(() => sendLog("Waiting for server to be available..."));
-  }, 3000);
-}
-
-export const mainURL = () => app.isPackaged ? `file://${join(__dirname, "../dist/index.html")}` : "http://localhost:5173/"

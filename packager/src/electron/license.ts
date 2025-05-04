@@ -1,7 +1,7 @@
 import { BrowserWindow, app } from "electron";
 import { writeFileSync, existsSync } from 'fs';
 import { join } from 'path';
-import { mainURL } from "./main";
+import { mainURL } from "./utils";
 
 const userDataPath = app.getPath('userData');
 const licensePath = join(userDataPath, 'license-accepted');

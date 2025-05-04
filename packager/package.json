@@ -13,6 +13,9 @@
     "build": "npm run premake && vite build && tsc -p tsconfig-electron.json && electron-forge make"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^7.0.2",
     "electron-squirrel-startup": "^1.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
