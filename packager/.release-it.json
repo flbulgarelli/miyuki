@@ -8,5 +8,8 @@
   "github": {
     "release": true,
     "releaseName": "${distName} v${version}"
+  },
+  "hooks": {
+    "before:init": "echo Iniciando workflow de release para distribución: ${distName}"
   }
 }
