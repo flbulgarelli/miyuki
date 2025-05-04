@@ -22,7 +22,7 @@ module.exports = {
       config: {
         icon: path.resolve(__dirname, 'src/assets/favicon.png'),
         bin: 'Miyuki',
-        executableName: 'Miyuki'
+        name: 'Miyuki'
       },
     },
   ],

@@ -1,11 +1,12 @@
-import { ipcMain, IpcMainInvokeEvent } from "electron";
+import { app, ipcMain } from "electron";
+import { saveLicenseAcceptance } from "./license";
+import { startMiyuki } from "./main";
 
-ipcMain.handle(
-  "node-version",
-  (event: IpcMainInvokeEvent, msg: string): string => {
-    console.log(event);
-    console.log(msg);
-
-    return process.versions.node;
+ipcMain.on('license-response', (_, accepted: boolean) => {
+  if (accepted) {
+    saveLicenseAcceptance();
+    startMiyuki();
+  } else {
+    app.quit();
   }
-);
+});
