@@ -1,6 +1,7 @@
-const { app, shell, Menu, BrowserWindow } = require('electron');
+const { app, Menu, BrowserWindow, ipcMain, shell } = require('electron');
 const { spawn } = require('child_process');
 const menuTemplate = require('./menu');
+const { hasAcceptedLicense, saveLicenseAcceptance, showLicenseWindow } = require('./license');
 const path = require('path');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -10,21 +11,13 @@ if (require('electron-squirrel-startup')) {
 
 const miyukiDist = process.env.MIYUKI_DIST || "pdep";
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
-});
-
-function sendLog(message) {
-  mainWindow.webContents.send('log-message', message);
-}
+let mainWindow;
 
 app.whenReady().then(() => {
   mainWindow = new BrowserWindow({
     show: false,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'preload.js'),
     },
   });
 
@@ -32,7 +25,31 @@ app.whenReady().then(() => {
   Menu.setApplicationMenu(menu);
   mainWindow.maximize();
   mainWindow.show();
-  mainWindow.loadFile(path.join(__dirname, 'loading.html'));
+
+  if (hasAcceptedLicense()) {
+    startMiyuki();
+  } else {
+    showLicenseWindow(mainWindow);
+  }
+});
+
+ipcMain.on('license-response', (event, accepted) => {
+  if (accepted) {
+    saveLicenseAcceptance();
+    startMiyuki();
+  } else {
+    app.quit();
+  }
+});
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
+});
+
+function startMiyuki() {
+  mainWindow.loadFile(path.join(__dirname, 'loading/loading.html'));
 
   mainWindow.webContents.setWindowOpenHandler((details) => {
     shell.openExternal(details.url);
@@ -70,8 +87,11 @@ app.whenReady().then(() => {
       sendLog(`[CRITIC]: Código de error: ${code}.`);
     }
   });
+}
 
-});
+function sendLog(message) {
+  mainWindow.webContents.send('log-message', message);
+}
 
 function waitForServer(url, callback) {
   const interval = setInterval(() => {
