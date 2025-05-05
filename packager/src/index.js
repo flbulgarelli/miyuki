@@ -1,5 +1,5 @@
-const { app, Menu, BrowserWindow, ipcMain, shell} = require('electron');
-const { exec } = require('child_process');
+const { app, Menu, BrowserWindow, ipcMain, shell } = require('electron');
+const { spawn } = require('child_process');
 const menuTemplate = require('./menu');
 const { hasAcceptedLicense, saveLicenseAcceptance, showLicenseWindow } = require('./license');
 const path = require('path');
@@ -10,7 +10,6 @@ if (require('electron-squirrel-startup')) {
 }
 
 const miyukiDist = process.env.MIYUKI_DIST || "pdep";
-const command = `docker compose -f ${process.resourcesPath}/docker/docker-compose.yml -f ${process.resourcesPath}/docker/docker-compose.${miyukiDist}.yml up -d`;
 
 let mainWindow;
 
@@ -59,26 +58,42 @@ function startMiyuki() {
     return { action: "deny" };
   })
 
-  exec(command, (error, stdout, stderr) => {
-    if (error) {
-      sendLog(`Error on Docker Compose execution: ${error.message}`);
-      return;
-    }
-    if (stderr) {
-      sendLog(`Error on output: ${stderr}`);
-      return;
-    }
-    sendLog(`Docker Compose output: ${stdout}`);
+  const dockerProcess = spawn("docker", [
+    'compose',
+    '-f', path.join(process.resourcesPath, 'docker', 'docker-compose.yml'),
+    '-f', path.join(process.resourcesPath, 'docker', `docker-compose.${miyukiDist}.yml`),
+    'up',
+    '-d'
+  ])
+
+  dockerProcess.stdout.on('data', (data) => {
+    sendLog(`[INFO] ${data.toString()}`);
   });
 
-  waitForServer("http://localhost:3000", () => {
-    mainWindow.loadURL("http://localhost:3000");
+  dockerProcess.stderr.on('data', (data) => {
+    sendLog(`[INFO] ${data.toString()}`)
   });
 }
 
 function sendLog(message) {
   mainWindow.webContents.send('log-message', message);
 }
+
+dockerProcess.on('error', (error) => {
+  sendLog(`[ERROR]: Error iniciando el subproceso: ${error.message}`);
+});
+
+dockerProcess.on('close', (code) => {
+  if (code === 0) {
+    sendLog(`[SUCCESS]: Containers iniciados correctamente.`);
+    waitForServer("http://localhost:3000", () => {
+      sendLog("Aplicación lista, cargando...");
+      mainWindow.loadURL("http://localhost:3000");
+    });
+  } else {
+    sendLog(`[CRITIC]: Código de error: ${code}.`);
+  }
+});
 
 function waitForServer(url, callback) {
   const interval = setInterval(() => {
@@ -89,6 +104,6 @@ function waitForServer(url, callback) {
           callback();
         }
       })
-      .catch(() => sendLog("Waiting for server to be available..."));
+      .catch(() => sendLog("Esperando a que el servidor esté disponible."));
   }, 3000);
 }

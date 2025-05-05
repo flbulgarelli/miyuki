@@ -14,7 +14,7 @@
 
         <div class="checkboxes">
             <label>
-                <input type="checkbox" id="check-objectives" />
+                <input type="checkbox" id="check-principles" />
                 Declaro haber leído y comprendido los objetivos y principios de Miyuki.
             </label>
             <label>
@@ -40,14 +40,14 @@
             });
 
         const acceptBtn = document.getElementById('accept');
-        const checkObjectives = document.getElementById('check-objectives');
+        const checkPrinciples = document.getElementById('check-principles');
         const checkLicense = document.getElementById('check-license');
 
         function updateButtonState() {
-            acceptBtn.disabled = !(checkObjectives.checked && checkLicense.checked);
+            acceptBtn.disabled = !(checkPrinciples.checked && checkLicense.checked);
         }
 
-        checkObjectives.addEventListener('change', updateButtonState);
+        checkPrinciples.addEventListener('change', updateButtonState);
         checkLicense.addEventListener('change', updateButtonState);
 
         acceptBtn.addEventListener('click', () => {
