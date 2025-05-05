@@ -11,7 +11,6 @@ services:
   miyuki-server:
     image: flbulgarelli/miyuki-server
     container_name: miyuki-server
-    #command: /bin/sh -c "rm -f /var/www/miyuki/tmp/pids/server.pid && rails s"
     build:
       context: ..
       dockerfile: docker/server/Dockerfile
