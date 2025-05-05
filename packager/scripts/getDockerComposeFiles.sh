@@ -1,7 +1,7 @@
 echo "Getting docker-compose files..."
 
 DIR="docker"
-MIYUKI_DIST="pdep"
+
 if [ -z "$MIYUKI_DIST" ]; then
   echo "MIYUKI_DIST is not set, use MIYUKI_DIST=<dist> npm run make"
   exit 1
