@@ -17,9 +17,7 @@ app.whenReady().then(() => {
   mainWindow = new BrowserWindow({
     show: false,
     webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false,
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'preload.js'),
     },
   });
 
@@ -73,27 +71,27 @@ function startMiyuki() {
   dockerProcess.stderr.on('data', (data) => {
     sendLog(`[INFO] ${data.toString()}`)
   });
+
+  dockerProcess.on('error', (error) => {
+    sendLog(`[ERROR]: Error iniciando el subproceso: ${error.message}`);
+  });
+
+  dockerProcess.on('close', (code) => {
+    if (code === 0) {
+      sendLog(`[SUCCESS]: Containers iniciados correctamente.`);
+      waitForServer("http://localhost:3000", () => {
+        sendLog("Aplicación lista, cargando...");
+        mainWindow.loadURL("http://localhost:3000");
+      });
+    } else {
+      sendLog(`[CRITIC]: Código de error: ${code}.`);
+    }
+  });
 }
 
 function sendLog(message) {
   mainWindow.webContents.send('log-message', message);
 }
-
-dockerProcess.on('error', (error) => {
-  sendLog(`[ERROR]: Error iniciando el subproceso: ${error.message}`);
-});
-
-dockerProcess.on('close', (code) => {
-  if (code === 0) {
-    sendLog(`[SUCCESS]: Containers iniciados correctamente.`);
-    waitForServer("http://localhost:3000", () => {
-      sendLog("Aplicación lista, cargando...");
-      mainWindow.loadURL("http://localhost:3000");
-    });
-  } else {
-    sendLog(`[CRITIC]: Código de error: ${code}.`);
-  }
-});
 
 function waitForServer(url, callback) {
   const interval = setInterval(() => {
