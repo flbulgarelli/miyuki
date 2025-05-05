@@ -19,7 +19,8 @@
             </label>
             <label>
                 <input type="checkbox" id="check-license" />
-                Declaro haber leído y comprendido la <a href="https://github.com/flbulgarelli/miyuki/blob/main/LICENSE" target="_blank">licencia de
+                Declaro haber leído y comprendido la <a href="https://github.com/flbulgarelli/miyuki/blob/main/LICENSE"
+                    target="_blank">licencia de
                     Miyuki.</a>
             </label>
         </div>
@@ -31,7 +32,6 @@
     </div>
 
     <script>
-        const { ipcRenderer } = require('electron');
 
         fetch('PRINCIPLES')
             .then(response => response.text())
@@ -51,12 +51,13 @@
         checkLicense.addEventListener('change', updateButtonState);
 
         acceptBtn.addEventListener('click', () => {
-            ipcRenderer.send('license-response', true);
+            window.electron.sendResponse(true)
         });
 
         document.getElementById('reject').addEventListener('click', () => {
-            ipcRenderer.send('license-response', false);
+            window.electron.sendResponse(false)
         });
     </script>
 </body>
+
 </html>
