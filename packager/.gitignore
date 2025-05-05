@@ -16,7 +16,7 @@ dist-ssr
 out
 .env
 **/LICENSE
-**/OBJECTIVES_AND_PRINCIPLES
+**/PRINCIPLES
 
 # Editor directories and files
 .vscode/*
