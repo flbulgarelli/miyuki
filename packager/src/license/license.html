@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Miyuki</title>
+    <link rel="stylesheet" href="license.css" />
+</head>
+
+<body>
+    <div class="license-container">
+        <h1>Objetivos y principios de Miyuki</h1>
+        <pre id="license-text"></pre>
+
+        <div class="checkboxes">
+            <label>
+                <input type="checkbox" id="check-principles" />
+                Declaro haber leído y comprendido los objetivos y principios de Miyuki.
+            </label>
+            <label>
+                <input type="checkbox" id="check-license" />
+                Declaro haber leído y comprendido la <a href="https://github.com/flbulgarelli/miyuki/blob/main/LICENSE"
+                    target="_blank">licencia de
+                    Miyuki.</a>
+            </label>
+        </div>
+
+        <div class="button-container">
+            <button id="accept" disabled>Aceptar</button>
+            <button id="reject">Rechazar</button>
+        </div>
+    </div>
+
+    <script>
+
+        fetch('PRINCIPLES')
+            .then(response => response.text())
+            .then(text => {
+                document.getElementById('license-text').textContent = text;
+            });
+
+        const acceptBtn = document.getElementById('accept');
+        const checkPrinciples = document.getElementById('check-principles');
+        const checkLicense = document.getElementById('check-license');
+
+        function updateButtonState() {
+            acceptBtn.disabled = !(checkPrinciples.checked && checkLicense.checked);
+        }
+
+        checkPrinciples.addEventListener('change', updateButtonState);
+        checkLicense.addEventListener('change', updateButtonState);
+
+        acceptBtn.addEventListener('click', () => {
+            window.electron.sendResponse(true)
+        });
+
+        document.getElementById('reject').addEventListener('click', () => {
+            window.electron.sendResponse(false)
+        });
+    </script>
+</body>
+
+</html>

@@ -14,6 +14,7 @@ module.exports = {
       config: {
         iconUrl: 'file://' + path.resolve(__dirname, 'src/icons/favicon.ico'),
         setupIcon: path.resolve(__dirname, 'src/icons/favicon.ico'),
+        setupExe: 'MiyukiInstaller.exe',
       },
     },
     {
