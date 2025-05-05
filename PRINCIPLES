@@ -1,4 +1,5 @@
 NUESTROS PRINCIPIOS
+Versión en español
 
 Miyuki es un proyecto de software creado por una comunidad diversa de docentes
 de Argentina, conformada en el seno de la universidad pública. Nuestro objetivo
@@ -32,16 +33,67 @@ sistemas de opresión [2], los estamos aceptando y perpetuando.
 
 Por estos motivos, desde el equipo de Miyuki declaramos:
 
- * nuestro compromiso con observar constantemente estas injusticias y con
-   incluir como parte esencial de su proceso de desarrollo el análisis crítico
-   del impacto de nuestras producciones en tales sistemas de opresión.
- * nuestro sueño de que, quienes usan la aplicación, en tanto personas que
-   aprenderán a programar y construirán  software, persigan una formación
-   humanística e integral que vaya más allá de cuestiones tecnológicas y que no
-   ignoren la capacidad transformadora de su producción para alcanzar un mundo
-   más justo [3].
+  * nuestro compromiso con observar constantemente estas injusticias y con
+    incluir como parte esencial de su proceso de desarrollo el análisis crítico
+    del impacto de nuestras producciones en tales sistemas de opresión.
+  * nuestro sueño de que, quienes usan la aplicación, en tanto personas que
+    aprenderán a programar y construirán  software, persigan una formación
+    humanística e integral que vaya más allá de cuestiones tecnológicas y que no
+    ignoren la capacidad transformadora de su producción para alcanzar un mundo
+    más justo [3].
 
 Referencias
+
+[1] https://safiyaunoble.com/wp-content/uploads/2020/09/Algorithms_Oppression_Introduction_Intro.pdf
+[2] https://data-feminism.mitpress.mit.edu/pub/o6w62eho/release/1
+[3] https://www.acm.org/code-of-ethics/software-engineering-code
+[*] https://sur.conectas.org/wp-content/uploads/2018/07/sur-27-portugues-renata-avila-pinto.pdf
+[*] https://ri.conicet.gov.ar/handle/11336/88838
+
+
+OUR PRINCIPLES
+English version
+
+Miyuki is a software project created by a diverse community of educators from
+Argentina, formed within the framework of the public university system. Our aim
+is to provide a tool for learning programming, using open content and without
+requiring Internet access.
+
+To achieve this, we use free and open-source software components from the Mumuki
+platform (https://github.com/mumuki/) and its Creative Commons-licensed content
+(https://github.com/mumukiproject/), to which we have added tools to simplify
+installation and reduce dependence on a client-server architecture.
+
+While these goals are primarily pragmatic (reducing server maintenance costs,
+enabling use even with low-quality or no Internet connections) and respond to
+real and everyday problems, they also have deeper roots.
+
+We believe that the software we build and use is not neutral [1]; on the
+contrary, every line of code is political: it is created within a social,
+historical, and cultural context. Everything we program is shaped by that
+context, but it also has the potential to transform it. Through action or
+omission, software will always be a vehicle to express, reproduce, reinforce, or
+challenge political visions.
+
+Within this framework, we who develop Miyuki acknowledge the existence of
+systems of oppression. In particular, though not exclusively: the world is
+shaped by power relations that harm people based on race, gender, sexual
+orientation, social conditions, disabilities, and nationality. Every time our
+code does not challenge these systems of oppression [2], we are accepting and
+perpetuating them.
+
+For these reasons, the Miyuki team declares:
+
+  * our commitment to continuously observe these injustices and to include, as
+    an essential part of the development process, critical analysis of the
+    impact of our work on these systems of oppression.
+
+  * our hope that those who use the application, as people learning to program
+    and build software, will pursue a humanistic and holistic education that
+    goes beyond technical issues and embraces the transformative potential of
+    their work in the pursuit of a more just world [3].
+
+References
 
 [1] https://safiyaunoble.com/wp-content/uploads/2020/09/Algorithms_Oppression_Introduction_Intro.pdf
 [2] https://data-feminism.mitpress.mit.edu/pub/o6w62eho/release/1
