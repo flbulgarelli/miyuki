@@ -1,4 +1,4 @@
-FROM ruby:3.2.2-bullseye
+FROM ruby:3.2.2-alpine
 
 ENV RAILS_ENV=production
 ENV RACK_ENV=production
@@ -8,8 +8,13 @@ RUN gem install bundler -v 2.4
 RUN mkdir -p /var/www/miyuki
 WORKDIR /var/www/miyuki
 
-COPY Gemfile* /var/www/miyuki/
-RUN bundle install --without development test
+COPY Gemfile /var/www/miyuki/
+
+RUN apk add --no-cache make gcc g++ musl-dev sqlite-dev tzdata git coreutils ruby-dev
+RUN bundle config build.sqlite3 --use-system-libraries \
+    && bundle config set force_ruby_platform true \
+    && bundle config set without development test
+RUN bundle install --jobs=8
 
 COPY app/ /var/www/miyuki/app/
 COPY config/ /var/www/miyuki/config/
