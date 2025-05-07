@@ -1,5 +1,7 @@
 require_relative "boot"
+require "logger"
 require "rails/all"
+
 
 require 'mumukit/core'
 require 'sassc-rails'
