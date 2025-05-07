@@ -1,4 +1,4 @@
-FROM ruby:3.2.2-alpine
+FROM ruby:3.2.2-alpine AS builder
 
 ENV RAILS_ENV=production
 ENV RACK_ENV=production
@@ -8,13 +8,32 @@ RUN gem install bundler -v 2.4
 RUN mkdir -p /var/www/miyuki
 WORKDIR /var/www/miyuki
 
-COPY Gemfile /var/www/miyuki/
+COPY Gemfile* /var/www/miyuki/
 
-RUN apk add --no-cache make gcc g++ musl-dev sqlite-dev tzdata git coreutils ruby-dev
+RUN apk add --no-cache make gcc g++ musl-dev sqlite-dev tzdata git ruby-dev
+
 RUN bundle config build.sqlite3 --use-system-libraries \
     && bundle config set force_ruby_platform true \
-    && bundle config set without development test
-RUN bundle install --jobs=8
+    && bundle config set without development test \
+    && bundle install --jobs=8
+
+RUN bundle clean --force \
+    && apk del make gcc g++ musl-dev ruby-dev \
+    && rm -rf /var/cache/apk/*
+
+FROM ruby:3.2.2-alpine
+
+ENV RAILS_ENV=production
+ENV RACK_ENV=production
+
+WORKDIR /var/www/miyuki
+
+COPY --from=builder /var/www/miyuki .
+COPY --from=builder /usr/local/bundle /usr/local/bundle
+
+RUN apk add --no-cache \
+    sqlite \
+    tzdata
 
 COPY app/ /var/www/miyuki/app/
 COPY config/ /var/www/miyuki/config/
@@ -36,6 +55,7 @@ ENV RAILS_SERVE_STATIC_FILES=true
 
 RUN cp -r $(bundle show mumuki-styles)/app/assets/fonts/* /var/www/miyuki/public/assets
 
-CMD ["rails", "s"]
-
 EXPOSE 3000
+
+CMD ["rails", "s", "-e", "production"]
+
