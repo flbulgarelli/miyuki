@@ -57,5 +57,5 @@ RUN cp -r $(bundle show mumuki-styles)/app/assets/fonts/* /var/www/miyuki/public
 
 EXPOSE 3000
 
-CMD ["rails", "s", "-e", "production"]
+CMD ["rails", "s"]
 
