@@ -15,11 +15,8 @@ RUN apk add --no-cache make gcc g++ musl-dev sqlite-dev tzdata git ruby-dev
 RUN bundle config build.sqlite3 --use-system-libraries \
     && bundle config set force_ruby_platform true \
     && bundle config set without development test \
-    && bundle install --jobs=8
-
-RUN bundle clean --force \
-    && apk del make gcc g++ musl-dev ruby-dev \
-    && rm -rf /var/cache/apk/*
+    && bundle install --jobs=8 \
+    && bundle clean --force 
 
 FROM ruby:3.2.2-alpine
 
@@ -55,7 +52,9 @@ ENV RAILS_SERVE_STATIC_FILES=true
 
 RUN cp -r $(bundle show mumuki-styles)/app/assets/fonts/* /var/www/miyuki/public/assets
 
+COPY docker/server/clean_start.sh /var/www/miyuki/clean_start.sh
+RUN chmod +x /var/www/miyuki/clean_start.sh
+
 EXPOSE 3000
 
-CMD ["rails", "s", "-e", "production"]
-
+CMD ["sh", "./clean_start.sh"]
