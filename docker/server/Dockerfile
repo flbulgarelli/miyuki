@@ -15,11 +15,8 @@ RUN apk add --no-cache make gcc g++ musl-dev sqlite-dev tzdata git ruby-dev
 RUN bundle config build.sqlite3 --use-system-libraries \
     && bundle config set force_ruby_platform true \
     && bundle config set without development test \
-    && bundle install --jobs=8
-
-RUN bundle clean --force \
-    && apk del make gcc g++ musl-dev ruby-dev \
-    && rm -rf /var/cache/apk/*
+    && bundle install --jobs=8 \
+    && bundle clean --force 
 
 FROM ruby:3.2.2-alpine
 
@@ -57,5 +54,4 @@ RUN cp -r $(bundle show mumuki-styles)/app/assets/fonts/* /var/www/miyuki/public
 
 EXPOSE 3000
 
-CMD ["rails", "s"]
-
+CMD rm -f /var/www/miyuki/tmp/pids/server.pid && exec rails s
