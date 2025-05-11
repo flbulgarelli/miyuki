@@ -52,9 +52,6 @@ ENV RAILS_SERVE_STATIC_FILES=true
 
 RUN cp -r $(bundle show mumuki-styles)/app/assets/fonts/* /var/www/miyuki/public/assets
 
-COPY docker/server/clean_start.sh /var/www/miyuki/clean_start.sh
-RUN chmod +x /var/www/miyuki/clean_start.sh
-
 EXPOSE 3000
 
-CMD ["sh", "./clean_start.sh"]
+CMD rm -f /var/www/miyuki/tmp/pids/server.pid && exec rails s
