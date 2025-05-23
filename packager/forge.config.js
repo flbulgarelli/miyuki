@@ -10,7 +10,7 @@ module.exports = {
   rebuildConfig: {},
   makers: [
     {
-      name: '@electron-forge/maker-squirrel', 
+      name: '@electron-forge/maker-squirrel',
       config: {
         iconUrl: 'file://' + path.resolve(__dirname, 'src/icons/favicon.ico'),
         setupIcon: path.resolve(__dirname, 'src/icons/favicon.ico'),
@@ -23,5 +23,12 @@ module.exports = {
         icon: path.resolve(__dirname, 'src/icons/favicon.png')
       },
     },
+    {
+      name: '@electron-forge/maker-dmg',
+      config: {
+        background: './assets/dmg-background.png',
+        format: 'ULFO'
+      }
+    }
   ],
 };
