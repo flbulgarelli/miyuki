@@ -16,7 +16,8 @@
   },
   "keywords": [],
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.1"
+    "electron-squirrel-startup": "^1.0.1",
+    "fix-path": "^3.0.0"
   },
   "devDependencies": {
     "@electron-forge/cli": "^7.7.0",
